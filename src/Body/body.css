@@ -1,0 +1,233 @@
+#body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 8;
+}
+.cointainer {
+    position: relative;
+    top: 150px;
+    width: 1050px;
+    /* height: 10000px; */
+    padding: 0;
+    background-color: white;
+    /* border: 2px solid #007af4; */
+    z-index: -1;
+    /* display: flex;
+    flex-direction: column; */
+    border-radius: 20px;
+}
+.box_product {
+    /* margin-top: 10px; */
+    /* right: 200px; */
+    position: relative;
+
+    width: 650px;
+    left: 230px;
+    /* height: 500px; */
+    top: 0;
+    padding: 10px;
+    /* height: 500px; */
+    /* background-color: red; */
+    border-radius: 10px;
+}
+.product {
+    border: 2px solid #517da9;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.product:hover {
+    background-color: #b5c8d818;
+}
+.product_name {
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    /* background-color: blue; */
+    font-size: 24px;
+    font-weight: 600;
+    color: #517da9;
+}
+.product_pic {
+    position: relative;
+    background: url('https://cdn.appliancepartspros.com/images/product/cache/frigidaire-pure-source-3-wf3cb-ap4567491_01_sm.jpg ');
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 200px;
+    margin-top: 60px;
+    margin-left: 25px;
+    border-radius: 10px;
+    border: 1px solid #517da9;
+}
+.content {
+    position: relative;
+    left: 25px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.noidungchitiet {
+    /* background-color: red; */
+    left: 25px;
+    width: 550px;
+    font-size: 15px;
+    position: relative;
+    margin-top: 10px;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+.price {
+    position: absolute;
+    left: 340px;
+    top: 90px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: baseline;
+}
+.price_price {
+    margin-left: 10px;
+    color: #ee4d2d;
+    font-weight: 700;
+    font-size: 25px;
+}
+.btn {
+    height: 40px;
+    border: none;
+    left: 360px;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    /* font-weight: 600; */
+}
+
+.btn_buy {
+    top: 160px;
+    width: 150px;
+    background-color: #ee4d2d;
+}
+.btn_buy:hover {
+    background: #ffe3dafb;
+    border: 1px solid #ff5722;
+    color: #f24320;
+}
+.btn_trade:hover {
+    background: #d8ebff;
+    border: 1px solid #517da9;
+    color: #517da9;
+}
+.btn_trade {
+    top: 210px;
+    width: 150px;
+    background-color: #517da9;
+}
+/* box_search */
+.box_search {
+    background-color: #ffede6fb;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    top: 10px;
+    margin: 2px;
+    border: 2px solid #ff5722;
+    border-radius: 10px;
+}
+.box_search_title {
+    padding: 10px 0px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff5722;
+    cursor: pointer;
+}
+.box_search_input {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 14px;
+    width: 115px;
+    outline: none;
+    /* color: #f24320; */
+    font-family: 500;
+    padding-right: 50px;
+    border: 1px solid #ff5722;
+    border-radius: 5px;
+    z-index: 1;
+}
+.box_search_icon {
+    z-index: 100000;
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    color: #ff5722;
+    cursor: pointer;
+}
+.box_search_icon:hover {
+    opacity: 0.5;
+}
+/* taskbar_body */
+.taskbar_body {
+    /* background-color: red; */
+    position: absolute;
+    width: 210px;
+    height: 500px;
+    margin-left: 12px;
+}
+.boloc {
+    position: relative;
+    margin-top: 30px;
+    background-color: #dcedff;
+    /* height: 400px; */
+    /* display: none; */
+    border: 2px solid #517da9;
+    border-radius: 10px;
+}
+.boloc_title {
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 15px 0;
+}
+
+.bocloc_adress--title, .bocloc_type--title {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.bocloc_adress, .boloc_type {
+    /* background-color: red; */
+    border-bottom: 1px solid #517da9;
+    border-top: 1px solid #517da9;
+ 
+}
+.list {
+    color: #263b50;
+    cursor: pointer;
+    /* background-color: red; */
+    height: 150px;
+    overflow: auto;
+    width: 150px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
+.list::-webkit-scrollbar {
+    width: 5px;
+    background-color: #517da9;
+    border-radius: 10px;
+}
+.selecter {
+    height: 20px;
+}
+.selecter:hover {
+    transform: scale(0.98);
+}

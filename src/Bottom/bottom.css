@@ -1,0 +1,17 @@
+.bottom {
+    position: relative;
+    margin-top: 200px;
+    height: 200px;
+    background-color: #517da9;
+    box-shadow: 0 0 5px 2px ;
+}
+.bottom_title {
+    color: white;
+    z-index: 11;
+    /* background-color: red; */
+    width: 500px;
+    position: relative;
+    top: 30px;
+    left: 40px;
+    font-size: 20px;
+}
