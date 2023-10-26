@@ -83,7 +83,7 @@
     position: fixed;
     width: 300px;
     top: 0;
-    height: 610px;
+    bottom: 0;
     background-color: white;
     right: 0;
     z-index: 10;
