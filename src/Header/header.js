@@ -1,19 +1,17 @@
 import './header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass,faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faHouse } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 
 function Header() {
     useEffect(() => {
         function handleMenu() {
-            
             let menu = document.getElementById('menu');
             let menuChoice = document.getElementById('menu_choice');
             let lopPhu = document.getElementById('lopphu');
             menu.onclick = () => {
                 menuChoice.style.display = 'block';
                 lopPhu.style.display = 'block';
-              
             };
             lopPhu.onclick = () => {
                 menuChoice.style.display = 'none';
@@ -25,17 +23,16 @@ function Header() {
     return (
         <div>
             <div className="header">
-                <div className='header_pic'></div>
+                <div className="header_pic"></div>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
                 <div id="accountBox">
                     <a href="/singup" className="aOfheader">
-                        <div className="accountBox_sl accountBox_sl--singup">Đăng ký</div>
+                        <div className="accountBox_sl accountBox_sl--singup">Đăng ký / Đăng nhập</div>
                     </a>
-                    <a href="/login" className="aOfheader">
-                        <div className="accountBox_sl accountBox_sl--login">Đăng nhập</div>
-                    </a>
-                    <div className="menu accountBox_sl" id="menu"><FontAwesomeIcon icon={faHouse} className='iconmenu'/>
+
+                    <div className="menu accountBox_sl" id="menu">
+                        <FontAwesomeIcon icon={faHouse} className="iconmenu" />
                         Home
                     </div>
                 </div>

@@ -1,145 +1,191 @@
 import { useEffect } from 'react';
 import './style.css';
-// import { Login } from '../Log in';
-// import {btnLogin} from './../Log in/index'
-// import { useEffect, } from 'react';
-// let b = [];
-// let c = [];
 function Singup() {
     useEffect(() => {
-        function hd() {
-            let emailSingup = document.getElementById('infoSingup--email');
-            let passSingup = document.getElementById('infoSingup--password');
-            let warningAlert = document.getElementById('warning');
-            let x = document.getElementById('inputSingup--input');
-            let isTick = false;
-            x.onchange = () => {
-                isTick = !isTick
-            };
-            console.log(isTick)
-            if (isTick) {
-                function signUp(userMail, userPass) {
-                    dataAccount.set(userMail, userPass);
+        let check = {
+            isAlpha: (c) => {
+                let n = c.charCodeAt(0);
+                return (n > 47 && n < 58) || (n > 64 && n < 91) || (n > 96 && n < 123);
+            },
+            isAlphaAndNotNumber: (c) => {
+                let n = c.charCodeAt(0);
+                return (n > 64 && n < 91) || (n > 96 && n < 123) || c === ' ';
+            },
+            isNumber: (c) => {
+                let n = c.charCodeAt(0);
+                return n > 47 && n < 58;
+            },
+            checkNickName: (nickName) => {
+                if (!check.isAlpha(nickName[0])) return false;
+                for (let i = 0; i < nickName.length; ++i) {
+                    if (!check.isAlpha(nickName[i]) && nickName[i] !== '-' && nickName[i] !== '_') return false;
                 }
-                signUp(emailSingup.value, passSingup.value);
-                console.log(dataAccount);
-                warningAlert.style.display = 'none';
-                emailSingup.style.border = '1px solid #007af4';
-                passSingup.style.border = '1px solid #007af4';
-            } else {
-                warningAlert.style.display = 'block';
-                emailSingup.style.border = '1px solid red';
-                passSingup.style.border = '1px solid red';
-            }
-        }
-
-        function checkValidEmail(string) {
-            let warningAlert = document.getElementById('warning');
-            let emailSingup = document.getElementById('infoSingup--email');
-            let passSingup = document.getElementById('infoSingup--password');
-            let isCheck = false;
-            var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            if (!pattern.test(string)) {
-                isCheck = false;
-            } else {
-                isCheck = true;
-            }
-            if (isCheck) {
-                hd();
-            } else {
-                warningAlert.style.display = 'block';
-                emailSingup.style.border = '1px solid red';
-                passSingup.style.border = '1px solid red';
-            }
-        }
-
-        let dataAccount = new Map();
-        function handleAcc() {
-            // let dataUser = new Map();
-            // let arrId = ['userPhoneNumber', 'userAdDress', 'userPass'];
-            let btnSingup = document.getElementById('btnAcc--singup');
-            btnSingup.onclick = () => {
-                let emailSingup = document.getElementById('infoSingup--email').value;
-                // let passSingup = document.getElementById('infoSingup--password').value;
-                checkValidEmail(emailSingup);
-            };
-
-            // login
-            // function upData(userName) {}
-            let btnLogin = document.getElementById('btnAcc--login');
-            btnLogin.onclick = () => {
-                let errorAlert = document.getElementById('error');
-                let emailLogin = document.getElementById('infoSingup--email');
-                let passLogin = document.getElementById('infoSingup--password');
-                function logIn(inpMail, inpPass) {
-                    if (dataAccount.get(inpMail)) {
-                        let passPre = dataAccount.get(inpMail);
-                        if (passPre !== inpPass) {
-                            emailLogin.style.border = '1px solid red';
-                            passLogin.style.border = '1px solid red';
-                            errorAlert.style.display = 'block';
-                        } else {
-                            // upData(inpName);
-                            errorAlert.style.display = 'none';
-                            emailLogin.style.border = '1px solid #007af4';
-                            passLogin.style.border = '1px solid #007af4';
-                        }
-                    } else {
-                        console.log('Invalid Name!');
-                    }
+                return nickName.length > 0;
+            },
+            checkFullName: (fullName) => {
+                for (let i = 0; i < fullName.length; ++i) {
+                    if (!check.isAlphaAndNotNumber(fullName[i])) return false;
                 }
-                logIn(emailLogin.value, passLogin.value);
-            };
+                return fullName.length > 0;
+            },
+            checkPhoneNumber: (numberPhone) => {
+                for (let i = 0; i < numberPhone.length; ++i) {
+                    if (!check.isNumber(numberPhone[i])) return false;
+                }
+                if (numberPhone[0] === '0') return numberPhone.length === 10;
+                else return numberPhone.length === 11;
+            },
+            checkEmail: (email) => {
+                let valid = '@gmail.com';
+                if (email.length <= valid.length) return false;
+                let i = valid.length - 1,
+                    j = email.length - 1;
+                while (i >= 0) {
+                    if (valid[i] !== email[j]) return false;
+                    --i;
+                    --j;
+                }
+                return email.length > 0;
+            },
+            checkPassWord: (passWord) => {
+                return passWord.length >= 6;
+            },
+        };
+
+        let errNotice = document.getElementById('error');
+        let userData = new Object();
+        let userNameData = new Set();
+        let userEmailData = new Set();
+        let userNumberData = new Set();
+        document.getElementById('btnAcc--singup').onclick = () => {
+            
+                console.log(1);
+            let fullName = document.getElementById('infoSingup--fullname').value;
+            let nickName = document.getElementById('infoSingup--username').value;
+            let email = document.getElementById('infoSingup--email').value;
+            let passWord = document.getElementById('infoSingup--password').value;
+            let phoneNumber = document.getElementById('infoSingup--phonenumber').value;
+            let fullNameElement = document.getElementById('infoSingup--fullname');
+            
+            let nickNameElement = document.getElementById('infoSingup--username');
+            let emailElement = document.getElementById('infoSingup--email');
+            let passWordElement = document.getElementById('infoSingup--password');
+            let phoneNumberElement = document.getElementById('infoSingup--phonenumber');
+            if (userNameData.has(nickName)) {
+                errNotice.innerHTML = 'Nick Name is exits!';
+                nickNameElement.classList.add('warning');
+
+                return;
+            } else {
+                nickNameElement.classList.remove('warning');
+            }
+            if (!check.checkNickName(nickName)) {
+                nickNameElement.classList.add('warning');
+
+                errNotice.innerHTML = 'Your nick name have some problem!';
+                return;
+            } else {
+                nickNameElement.classList.remove('warning');
+            }
+            if (!check.checkFullName(fullName)) {
+                errNotice.innerHTML = 'Your full name have some problem!';
+                fullNameElement.classList.add('warning');
+
+                return;
+            } else {
+                fullNameElement.classList.remove('warning');
+            }
+            if (userNumberData.has(phoneNumber)) {
+                phoneNumberElement.classList.add('warning');
+
+                errNotice.innerHTML = 'Number is exits!';
+                return;
+            } else {
+                phoneNumberElement.classList.remove('warning');
+            }
+            if (!check.checkPhoneNumber(phoneNumber)) {
+                phoneNumber.classList.add('warning');
+
+                errNotice.innerHTML = 'Your phone number have some problem!';
+                return;
+            } else {
+                phoneNumberElement.classList.remove('warning');
+            }
+            if (userEmailData.has(email)) {
+                emailElement.classList.add('warning');
+
+                errNotice.innerHTML = 'Email is exits!';
+                return;
+            } else {
+                emailElement.classList.remove('warning');
+            }
+            if (!check.checkEmail(email)) {
+                emailElement.classList.add('warning');
+
+                errNotice.innerHTML = 'Your email have some problem!';
+                return;
+            } else {
+                emailElement.classList.remove('warning');
+            }
+            if (!check.checkPassWord(passWord)) {
+                passWordElement.classList.add('warning');
+
+                errNotice.innerHTML = 'Your password have some problem!';
+                return;
+            } else {
+                passWordElement.classList.remove('warning');
+            }
+            userData[nickName] = {};
+            errNotice.innerHTML = '';
+            userNameData.add(nickName);
+            userData[nickName].fullName = fullName;
+            userData[nickName].phoneNumber = phoneNumber;
+            userNumberData.add(phoneNumber);
+            userData[nickName].email = email;
+            userEmailData.add(email);
+            userData[nickName].passWord = passWord;
+            console.log(userData[nickName]);
+            console.log(userData);
+            
+            
+            
+                fullNameElement.style.display = 'none'
+                nickNameElement.style.display = 'none'
+            
+
+            
+        };
+
+        document.getElementById('btnAcc--login').onclick = () => {
+            function logIn() {
+                let userNickNamen = document.getElementById('infoSingup--username').value;
+                let userPassWordn = document.getElementById('infoSingup--password').value;
+
+                if (userNameData.has(userNickNamen)) {
+                    if (userData[userNickNamen].passWord === userPassWordn) {
+                        errNotice.innerHTML = '';
+                        let userName = document.getElementById('infoSingup--fullname');
+                        let userEmail = document.getElementById('infoSingup--email');
+                        let userPhone = document.getElementById('infoSingup--phonenumber');
+                        userName.innerHTML = userData[userNickNamen].fullName;
+                        userEmail.innerHTML = userData[userNickNamen].email;
+                        userPhone.innerHTML = userData[userNickNamen].phoneNumber;
+                    } else errNotice.innerHTML = 'Password is wrong!';
+                } else errNotice.innerHTML = 'Nick Name invalid!';
+            }
+            logIn();
+        };
+
+        function logOut() {
+            errNotice.innerHTML = '';
+            let userName = document.getElementById('userFullName');
+            let userEmail = document.getElementById('userEmail');
+            let userPhone = document.getElementById('userPhoneNumer');
+            userName.innerHTML = 'Full Name';
+            userEmail.innerHTML = 'Email';
+            userPhone.innerHTML = 'Phone Number';
         }
-        handleAcc();
     }, []);
-
-    // Singup/Login
-
-    // const [userInfo, setuserInfo] = useState();
-    // const singUp = () => {
-    //     let emailSingup = document.getElementById('infoSingup--email');
-    //     let passSingup = document.getElementById('infoSingup--password');
-    //     setuserInfo({
-    //         email: emailSingup.value,
-    //         pass: passSingup.value,
-    //     });
-
-    // };
-    // const [userInfolog, setuserInfolog] = useState();
-    // const logIn = () => {
-    //     let emailLogin = document.getElementById('infoSingup--email');
-    //     let passLogin = document.getElementById('infoSingup--password');
-    //     setuserInfolog({
-    //         email: emailLogin.value,
-    //         pass: passLogin.value,
-    //     });
-    // };
-
-    // function handleUser() {
-    // let errorAlert = document.getElementById('error')
-    // let emailSingup = document.getElementById('infoSingup--email');
-    // let passSingup = document.getElementById('infoSingup--password');
-    //     if (userInfo !== undefined && userInfolog !== undefined) {
-    //         b.push(userInfo);
-    //         c.push(userInfolog);
-    //         for (let i = 0; i < b.length; i++) {
-    //             console.log(b[i])
-    //             for (let j = 0; j < c.length; j++) {
-    //                 console.log(c[j])
-
-    //                 if (c[j].email === b[i].email && c[j].pass === b[i].pass) {
-    //                     console.log('ok');
-    //                 } else {
-    // errorAlert.style.display = "block"
-    // emailSingup.style.border = "1px solid red"
-    // passSingup.style.border = "1px solid red"
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // handleUser();
 
     return (
         <div>
@@ -147,6 +193,21 @@ function Singup() {
                 <div className="boxSingup">
                     <h1>Sign up - Log in</h1>
                     <div className="infoSingup">
+                        <input
+                            className="inputSingup infoSingup--username"
+                            id="infoSingup--username"
+                            placeholder="Username"
+                        ></input>
+                        <input
+                            className="inputSingup infoSingup--fullname"
+                            id="infoSingup--fullname"
+                            placeholder="Tên đầy đủ"
+                        ></input>
+                        <input
+                            className="inputSingup infoSingup--phonenumber"
+                            id="infoSingup--phonenumber"
+                            placeholder="Số điện thoại"
+                        ></input>
                         <input
                             className="inputSingup infoSingup--email"
                             id="infoSingup--email"
@@ -174,16 +235,14 @@ function Singup() {
                             Đăng nhập
                         </button>
                     </div>
-                    <a href="/d" className="forgetmk">
+                    <a href="/d" className="forgetmk" id="forgetmk"> 
                         Quên mật khẩu ?
                     </a>
-                    <div className="error" id="error">
-                        Sai tài khoản hoặc mật khẩu
+                    <div className="error" id="error"></div>
+
+                    <div className="picSingup">
+                        <div className="picSingup_logo"></div>
                     </div>
-                    <div className="warning" id="warning">
-                        Email không chuẩn !
-                    </div>
-                    <div className="picSingup"></div>
                 </div>
             </div>
         </div>

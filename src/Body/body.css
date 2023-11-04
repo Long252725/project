@@ -8,7 +8,8 @@
 .cointainer {
     position: relative;
     top: 150px;
-    width: 1050px;
+    min-height: 500px;
+    width: 1100px;
     /* height: 10000px; */
     padding: 0;
     background-color: white;
@@ -18,7 +19,7 @@
     flex-direction: column; */
     border-radius: 20px;
 }
-.box_product {
+#box_product {
     /* margin-top: 10px; */
     /* right: 200px; */
     position: relative;
@@ -32,16 +33,16 @@
     /* background-color: red; */
     border-radius: 10px;
 }
-.product {
+#product {
     border: 2px solid #517da9;
     position: relative;
     border-radius: 10px;
     margin-bottom: 10px;
 }
-.product:hover {
+#product:hover {
     background-color: #b5c8d818;
 }
-.product_name {
+#product_name {
     position: absolute;
     left: 30px;
     top: 20px;
@@ -50,7 +51,7 @@
     font-weight: 600;
     color: #517da9;
 }
-.product_pic {
+#product_pic {
     position: relative;
     background: url('https://cdn.appliancepartspros.com/images/product/cache/frigidaire-pure-source-3-wf3cb-ap4567491_01_sm.jpg ');
     background-position: center;
@@ -62,14 +63,14 @@
     border-radius: 10px;
     border: 1px solid #517da9;
 }
-.content {
+#content {
     position: relative;
     left: 25px;
     margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
 }
-.noidungchitiet {
+#noidungchitiet {
     /* background-color: red; */
     left: 25px;
     width: 550px;
@@ -79,7 +80,7 @@
     font-weight: 400;
     padding-bottom: 20px;
 }
-.price {
+#price {
     position: absolute;
     left: 340px;
     top: 90px;
@@ -88,41 +89,46 @@
     display: flex;
     align-items: baseline;
 }
-.price_price {
+#price_price {
     margin-left: 10px;
     color: #ee4d2d;
     font-weight: 700;
     font-size: 25px;
 }
-.btn {
+
+
+#btn_buy {
+    top: 160px;
+    width: 150px;
+    background-color: #ee4d2d;
+     height: 40px;
+    border: none;
+    left: 360px;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+}
+#btn_buy:hover {
+    background: #ffe3dafb;
+    border: 1px solid #ff5722;
+    color: #f24320;
+}
+#btn_trade:hover {
+    background: #d8ebff;
+    border: 1px solid #517da9;
+    color: #517da9;
+}
+
+#btn_trade {
+    top: 210px;
+    width: 150px;
+    background-color: #517da9;
     height: 40px;
     border: none;
     left: 360px;
     position: absolute;
     color: white;
     cursor: pointer;
-    /* font-weight: 600; */
-}
-
-.btn_buy {
-    top: 160px;
-    width: 150px;
-    background-color: #ee4d2d;
-}
-.btn_buy:hover {
-    background: #ffe3dafb;
-    border: 1px solid #ff5722;
-    color: #f24320;
-}
-.btn_trade:hover {
-    background: #d8ebff;
-    border: 1px solid #517da9;
-    color: #517da9;
-}
-.btn_trade {
-    top: 210px;
-    width: 150px;
-    background-color: #517da9;
 }
 /* box_search */
 .box_search {
@@ -176,12 +182,15 @@
 /* taskbar_body */
 .taskbar_body {
     /* background-color: red; */
+    
     position: absolute;
     width: 210px;
     height: 500px;
     margin-left: 12px;
+
 }
 .boloc {
+
     position: relative;
     margin-top: 30px;
     background-color: #dcedff;
@@ -230,4 +239,101 @@
 }
 .selecter:hover {
     transform: scale(0.98);
+}
+.product_save {
+    position: absolute;
+    width: 400px;
+    height: 40px;
+    left: 400px;
+    color: #517da9;
+    /* background-color: red; */
+    font-size: 30px;
+}
+.product_save:hover {
+    color: #ee4d2d;
+
+}
+/* listproduct */
+.listproduct {
+    position: absolute;
+    width: 180px;
+    max-height: 500px;
+    /* height: 200px; */
+    right: 10px;
+    top: 10px;
+    background-color: #dcedff;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #517da9;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+
+}
+.listproduct::-webkit-scrollbar {
+    width: 5px;
+    background-color:#dcedff;
+    border-radius: 50px;
+    height: 100px;
+   
+}.listproduct::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+
+    background-color:#517da9;
+}
+.listproduct_title {
+    font-weight: 700;
+    color: #ee4d2d;
+    display: flex;
+    justify-content: center;
+    margin: 10px 10px;
+    border: 1px solid #ee4d2d;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffe3dafb;
+    padding: 5px 0px;
+    
+}
+.listproduct_like {
+    /* background-color: red; */
+    width: 135;
+    /* height: 10px; */
+    margin: 20px 10px 20px 10px;
+    position: relative;
+}
+#listproduct_like_select {
+    position: relative;
+    /* border-bottom: 3px solid #517da9; */
+    /* border-left: 3px solid #517da9; */
+    /* border-top: 3px solid #517da9; */
+    /* border-right: 3px solid #517da9; */
+    /* background-color: blue; */
+    height: 35px;
+    border-radius: 5px;
+    padding: 7px 10px;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 16px;
+    /* text-overflow: clip; */
+    overflow: hidden;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+#listproduct_like_select:hover {
+    transform: scale(0.99);
+    /* border-bottom: 1px solid #ee4d2d; */
+    background-color: #fff5f1 ;
+}
+#aaa {
+    color: red;
+}
+.to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    z-index: 9;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    /* background-color: red; */
+    color: #517da9;
+    cursor: pointer;
 }
