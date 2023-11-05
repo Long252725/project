@@ -21,6 +21,7 @@ function Body(props) {
                 if (window.scrollY > 150) {
                     taskbar.classList.add('sticky');
                     startBox.style.position = 'fixed';
+                    
 
                     if (window.scrollY > maxHeight - 490) {
                         taskbar.classList.remove('sticky');
