@@ -60,7 +60,7 @@ function Body(props) {
     }, []);
     useEffect(() => {
         function handlePost() {
-            axios.get('http://localhost:3000/posts').then((posts) => {
+            axios.get('https://test-api-n3fv.onrender.com/posts').then((posts) => {
                 let postss = posts.data;
                 setposts(postss);
             });

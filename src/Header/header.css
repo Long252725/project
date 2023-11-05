@@ -1,9 +1,9 @@
 .header {
     position: absolute;
     top: 0;
-    height: 70px;
+    height: 115px;
     width: 100%;
-    background-color: white;
+    background-color: #29354e;
     box-shadow: 0 0 5px #3c4c6c;
     display: flex;
     align-items: center;
@@ -11,19 +11,20 @@
 
 }
 .header_pic {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background: url('https://scontent.xx.fbcdn.net/v/t1.15752-9/394517794_6954486771313240_3684609075480503755_n.png?stp=dst-png_p403x403&_nc_cat=101&ccb=1-7&_nc_sid=510075&_nc_ohc=bCY_Gwui7akAX9DDriT&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AdQUlrIj2H59_hp-RG-S3i-ByiGQW8zRM2Upiie7I5k29A&oe=6561D2C6');
     background-position: center;
-    background-size: cover;
+    background-size: 120%;
     position: absolute;
     left: 170px;
     border-radius: 100%;
+    
 }
 #search {
-    width: 300px;
-    height: 35px;
-    left: 300px;
+    width: 450px;
+    height: 40px;
+    left: 375px;
     position: relative;
     border-radius: 10px;
     outline: none;
