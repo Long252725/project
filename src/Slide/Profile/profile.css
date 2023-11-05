@@ -14,21 +14,21 @@
     height: 500px;
     position: relative;
     /* background-color: red; */
-    border: 2px solid black;
+    border: 2px solid #29354e;
     border-radius: 10px;
 }
 .profile_cointainer_box_user--pic {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 100%;
     position: absolute;
     left: 120px;
-    top: 70px;
+    top: 60px;
 
     background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT82uKfzowS4dT3mUxcz0q1CKc13HiNCmrpHQ&usqp=CAU');
     background-position: center;
     background-size: cover;
-    border: 4px solid #517da9;
+    border: 4px solid #4884ea;
 }
 .profile_cointainer_box_user--name {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -44,8 +44,8 @@
     font-size: 17px;
     font-weight: 550;
     position: relative;
-    left: 120px;
-    top: 160px;
+    left: 115px;
+    top: 145px;
     padding: 0px;
 }
 .profile_cointainer_box_user--star {
@@ -62,12 +62,11 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 17px;
     font-weight: 550;
-    position: absolute;
-    top: 230px;
-    border-radius: 10px;
     font-weight: 700;
+    position: absolute;
+    top: 210px;
+    border-radius: 10px;
     cursor: pointer;
-    z-index: 9;
 }
 .profile_cointainer_box_user--chat {
     padding: 7px 30px;
@@ -75,6 +74,39 @@
     color: white;
     left: 180px;
 }
+.profile_cointainer_box_user--diachi, .profile_cointainer_box_user--state {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    font-weight: 550;
+    font-weight: 700;
+    position: absolute;
+    left: 60px;
+    top: 260px;
+    cursor: pointer;
+    color: #29354e;
+}
+.profile_cointainer_box_user--state {
+    margin-top: 35px;
+    left: 56px;
+}
 .right {
     margin-left: 5px;
+}
+.profile_cointainer_box_user--details {
+    background-color: #dcedff;
+    position: absolute;
+    left: 50px;
+    width: 260px;
+    height: 140px;
+    top: 330px;
+    padding: 4px 7px;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: auto;
+    border-radius: 5px;
+
+
+}
+.profile_cointainer_box_user--details::-webkit-scrollbar {
+    width: 0px;
 }

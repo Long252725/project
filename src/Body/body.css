@@ -257,10 +257,13 @@
     border-radius: 10px;
 }
 .selecter {
+
     height: 20px;
+   
 }
 .selecter:hover {
     transform: scale(0.98);
+
 }
 .product_save {
     position: absolute;
@@ -273,6 +276,7 @@
 .product_save:hover {
     color: #ee4d2d;
 }
+
 /* listproduct */
 .listproduct {
     position: absolute;
