@@ -23,7 +23,7 @@ function Header() {
     return (
         <div>
             <div className="header">
-                <div className="header_pic"></div>
+                <a href='/'><div className="header_pic"></div></a>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
                 <div id="accountBox">

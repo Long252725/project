@@ -3,6 +3,9 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBookmark, faCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { Player } from 'video-react';
+import './../../node_modules/video-react/dist/video-react.css';
 
 function Body(props) {
     const [posts, setposts] = useState([]);
@@ -21,31 +24,25 @@ function Body(props) {
                     startBox.style.position = 'fixed';
                     startBox.style.right = '135px';
 
-                    if (window.scrollY > maxHeight - 601) {
+                    if (window.scrollY > maxHeight - 490) {
                         taskbar.classList.remove('sticky');
                         taskbar.classList.add('sticky2');
-                        startBox.style.position = 'absolute'
-                        startBox.style.top = `${maxHeight - 626}px`
+                        startBox.style.position = 'absolute';
+                        startBox.style.top = `${maxHeight - 626}px`;
                         startBox.style.right = '';
                         // startBox.style.marginBottom = '30px'
-
-
-                        
                     } else {
                         taskbar.classList.add('sticky');
                         taskbar.classList.remove('sticky2');
                         startBox.style.position = 'fixed';
-                        startBox.style.top = ''
+                        startBox.style.top = '';
                         startBox.style.right = '135px';
                         // startBox.style.marginBottom = ''
-
-
                     }
                 } else {
                     taskbar.classList.remove('sticky');
                     startBox.style.position = 'absolute';
                     startBox.style.right = '';
-
                 }
             };
         }
@@ -57,6 +54,15 @@ function Body(props) {
             };
         }
         handletoTop();
+        function handleNextSp(){
+            let btnNextSp = document.getElementById('next-sp')
+            btnNextSp.onclick = ()=> {
+                let cointainerHeight = document.getElementById('cointainer')
+                cointainerHeight.style.maxHeight = `${cointainerHeight.clientHeight * 2}px ` 
+                console.log(cointainerHeight.clientHeight)
+            }   
+        }
+        handleNextSp()
     }, []);
     useEffect(() => {
         function handlePost() {
@@ -136,6 +142,7 @@ function Body(props) {
                     <div className="listproduct_title">Yêu thích</div>
                     <div className="listproduct_like"></div>
                 </div>
+                <button className='next-sp font_normal' id='next-sp'>Tiếp</button>
                 <div className="box_product" id="box_product">
                     {posts.map((post, index) => {
                         return (
@@ -181,6 +188,16 @@ function Body(props) {
             </div>
             <div>
                 <FontAwesomeIcon icon={faCircleUp} className="to-top" id="to-top" />
+            </div>
+            <div className="more">
+                <div className="more_title">Otin Store - Không lo đồ cũ</div>
+                <div className="more_video">
+                    <Player
+                        playsInline
+                        poster="https://z-p3-scontent.fvii1-1.fna.fbcdn.net/v/t1.15752-9/394517794_6954486771313240_3684609075480503755_n.png?_nc_cat=101&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=MaqX6WfeqsgAX9DaTej&_nc_ht=z-p3-scontent.fvii1-1.fna&oh=03_AdS0dqDtGgxY3cHBHnx4EcgXm83JVYiorYJtjo11Jj88Vw&oe=656EC986"
+                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                    />
+                </div>
             </div>
         </div>
     );
