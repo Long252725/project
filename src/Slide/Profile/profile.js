@@ -9,8 +9,10 @@ function Profile() {
             <div className='profile_cointainer_box_user'>
                 <div className='profile_cointainer_box_user--name'>Nguyễn Thành Long</div>
                 <div className='profile_cointainer_box_user--pic'></div>
-                <div className='profile_cointainer_box_user--username'>@long252725</div>
+                <div className='profile_cointainer_box_user--username'>@long252725<i class="fa-solid fa-circle-check right" style={{ color: '#4884ea' }}></i></div>
+
                 <div className='profile_cointainer_box_user--star'>Star: 100k</div>
+                <div className='profile_cointainer_box_user--chat'><i class="fa-solid fa-comment-dots left"></i>Chat</div>
             </div>
             <div className='profile_cointainer_box_posts'></div>
         </div>

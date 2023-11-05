@@ -8,6 +8,13 @@
     position: relative;
     z-index: 8;
 }
+.qc {
+    position: absolute;
+    width: 100px;
+    left: 0;
+    height: 1000px;
+    background: url('https://img.pikbest.com/01/76/04/54gpIkbEsTY46.jpg!w700wp');
+}
 .cointainer {
     position: relative;
     top: 150px;

@@ -91,7 +91,9 @@ function Body(props) {
     }, [posts]);
     return (
         <div id="body">
+            
             <div className="cointainer" id="cointainer">
+            
                 <div className="taskbar_body" id="taskbar_body">
                     <div className="box_search">
                         <div className="box_search_title">Xem thêm </div>
@@ -191,6 +193,7 @@ function Body(props) {
                     />
                 </div>
             </div>
+            
         </div>
     );
 }

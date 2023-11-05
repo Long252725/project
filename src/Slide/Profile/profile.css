@@ -49,19 +49,32 @@
     padding: 0px;
 }
 .profile_cointainer_box_user--star {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16px;
-    font-weight: 550;
-    position: relative;
+   
+
+    padding: 7px 20px;
     left: 50px;
-    top: 180px;
-    padding: 5px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: #ffe3dafb;
+    border: 1px solid #ff5722;
+    color: #f24320;
+    
+}
+.profile_cointainer_box_user--chat, .profile_cointainer_box_user--star {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    position: absolute;
+    top: 230px;
     border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 9;
+}
+.profile_cointainer_box_user--chat {
+    padding: 7px 30px;
     background-color: #517da9;
     color: white;
-    
+    left: 180px;
+}
+.right {
+    margin-left: 5px;
 }
