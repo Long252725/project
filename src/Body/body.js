@@ -21,7 +21,6 @@ function Body(props) {
                 if (window.scrollY > 150) {
                     taskbar.classList.add('sticky');
                     startBox.style.position = 'fixed';
-                    
 
                     if (window.scrollY > maxHeight - 490) {
                         taskbar.classList.remove('sticky');
@@ -51,15 +50,15 @@ function Body(props) {
             };
         }
         handletoTop();
-        function handleNextSp(){
-            let btnNextSp = document.getElementById('next-sp')
-            btnNextSp.onclick = ()=> {
-                let cointainerHeight = document.getElementById('cointainer')
-                cointainerHeight.style.maxHeight = `${cointainerHeight.clientHeight * 4}px ` 
-                console.log(cointainerHeight.clientHeight)
-            }   
+        function handleNextSp() {
+            let btnNextSp = document.getElementById('next-sp');
+            btnNextSp.onclick = () => {
+                let cointainerHeight = document.getElementById('cointainer');
+                cointainerHeight.style.maxHeight = `${cointainerHeight.clientHeight * 4}px `;
+                console.log(cointainerHeight.clientHeight);
+            };
         }
-        handleNextSp()
+        handleNextSp();
     }, []);
     useEffect(() => {
         function handlePost() {
@@ -121,16 +120,10 @@ function Body(props) {
                                 <li className="selecter">Đồ điện tử</li>
                                 <li className="selecter">Mỹ phẩm</li>
                                 <li className="selecter">Sách báo</li>
-                                <li className="selecter">Dụn cụ</li>
+                                <li className="selecter">Dụng cụ</li>
                                 <li className="selecter">Điện thoại</li>
                                 <li className="selecter">Đồ chơi</li>
-                                <li className="selecter">Máy tính</li>
-                                <li className="selecter">Đồ điện tử</li>
-                                <li className="selecter">Mỹ phẩm</li>
-                                <li className="selecter">Sách báo</li>
-                                <li className="selecter">Dụn cụ</li>
-                                <li className="selecter">Điện thoại</li>
-                                <li className="selecter">Đồ chơi</li>
+                                <li className="selecter">Tõi Se</li>
                             </ul>
                         </div>
                     </div>
@@ -139,7 +132,9 @@ function Body(props) {
                     <div className="listproduct_title">Yêu thích</div>
                     <div className="listproduct_like"></div>
                 </div>
-                <button className='next-sp font_normal' id='next-sp'>Tiếp</button>
+                <button className="next-sp font_normal" id="next-sp">
+                    Tiếp
+                </button>
                 <div className="box_product" id="box_product">
                     {posts.map((post, index) => {
                         return (

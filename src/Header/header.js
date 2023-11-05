@@ -23,10 +23,13 @@ function Header() {
     return (
         <div>
             <div className="header">
-                <a href='/'><div className="header_pic"></div></a>
+                <a href='/'><div className="header_pic"></div>
+                    <div className='header_pic_name'></div>
+                </a>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
               <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <i class="fa-solid fa-bell alert-icon"></i>
                 <div id="accountBox">
                     <a href="/singup" className="aOfheader">
                         <div className="accountBox_sl accountBox_sl--singup">Đăng ký / Đăng nhập</div>
@@ -57,9 +60,6 @@ function Header() {
                                 <i class="fa-brands fa-product-hunt left"></i>Đơn hàng
                             </div>
                         </a>
-                        <div className="menu_choice_cointainer_select menu_choice_cointainer--his">
-                            <i class="fa-solid fa-clock-rotate-left left"></i>Lịch sử
-                        </div>
                         <a href='/profile'>
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--profile">
                                 <i class="fa-solid fa-user left"></i>Profile
@@ -67,6 +67,9 @@ function Header() {
                         </a>
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--like">
                             <i class="fa-solid fa-star left"></i>Yêu thích
+                        </div>
+                        <div className="menu_choice_cointainer_select menu_choice_cointainer--logout">
+                            <i class="fa-solid fa-clock-rotate-left left"></i>Đăng xuất
                         </div>
                         <div className="menu_choice_cointainer_contact">
                             <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--title">
