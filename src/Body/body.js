@@ -13,7 +13,6 @@ function Body(props) {
 
     useEffect(() => {
         function handleStick() {
-            // console.log(maxHeight.clientHeight)
             window.onscroll = function () {
                 let maxHeight = document.getElementById('cointainer').clientHeight;
                 var taskbar = document.getElementById('taskbar_body');
@@ -22,7 +21,6 @@ function Body(props) {
                 if (window.scrollY > 150) {
                     taskbar.classList.add('sticky');
                     startBox.style.position = 'fixed';
-                    startBox.style.right = '135px';
 
                     if (window.scrollY > maxHeight - 490) {
                         taskbar.classList.remove('sticky');
@@ -30,14 +28,12 @@ function Body(props) {
                         startBox.style.position = 'absolute';
                         startBox.style.top = `${maxHeight - 626}px`;
                         startBox.style.right = '';
-                        // startBox.style.marginBottom = '30px'
                     } else {
                         taskbar.classList.add('sticky');
                         taskbar.classList.remove('sticky2');
                         startBox.style.position = 'fixed';
                         startBox.style.top = '';
-                        startBox.style.right = '135px';
-                        // startBox.style.marginBottom = ''
+                        startBox.style.right = '140px';
                     }
                 } else {
                     taskbar.classList.remove('sticky');
@@ -58,7 +54,7 @@ function Body(props) {
             let btnNextSp = document.getElementById('next-sp')
             btnNextSp.onclick = ()=> {
                 let cointainerHeight = document.getElementById('cointainer')
-                cointainerHeight.style.maxHeight = `${cointainerHeight.clientHeight * 2}px ` 
+                cointainerHeight.style.maxHeight = `${cointainerHeight.clientHeight * 4}px ` 
                 console.log(cointainerHeight.clientHeight)
             }   
         }

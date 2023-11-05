@@ -6,6 +6,7 @@ import Body from './Body/body';
 import { Fragment } from 'react';
 import Bottom from './Bottom/bottom';
 import Buy from './Slide/Buy/buy';
+import Profile from './Slide/Profile/profile';
 // import {Login} from './Slide/Log in';
 // import { useEffect } from 'react';
 
@@ -24,6 +25,7 @@ function App() {
                     }
                 ></Route>
                 <Route path="/singup" element={<Singup />}></Route>
+                <Route path="/profile" element={<Profile />}></Route>
                 <Route path="/donhang" element={<Buy />}></Route>
             </Routes>
         </div>

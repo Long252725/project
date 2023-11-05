@@ -1,16 +1,21 @@
+/* #bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 200px;
+    background-color: #29354e;
+} */
 #bottom {
     position: relative;
     margin-top: 200px;
     height: 200px;
     background-color: #29354e;
-    box-shadow: 0 0 5px 2px ;
 }
 .bottom_title {
     color: white;
     z-index: 11;
-    /* background-color: red; */
     width: 500px;
-    position: relative;
+    position: absolute;
     top: 30px;
     left: 40px;
     font-size: 20px;

@@ -268,15 +268,15 @@
 }
 /* listproduct */
 .listproduct {
-    position: absolute;
+    position: relative;
     width: 180px;
     max-height: 540px;
     /* height: 200px; */
     right: 10px;
     top: 10px;
     background-color: #dcedff;
-    border-radius: 10px;
-    /* border-radius: 10px 0 0 10px; */
+    /* border-radius: 10px; */
+    border-radius: 10px 0 0 10px;
     border: 2px solid #517da9;
     margin-bottom: 20px;
     overflow-y: scroll;

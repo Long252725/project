@@ -26,6 +26,7 @@ function Header() {
                 <a href='/'><div className="header_pic"></div></a>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <div id="accountBox">
                     <a href="/singup" className="aOfheader">
                         <div className="accountBox_sl accountBox_sl--singup">Đăng ký / Đăng nhập</div>
@@ -59,9 +60,11 @@ function Header() {
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--his">
                             <i class="fa-solid fa-clock-rotate-left left"></i>Lịch sử
                         </div>
-                        <div className="menu_choice_cointainer_select menu_choice_cointainer--profile">
-                            <i class="fa-solid fa-user left"></i>Profile
-                        </div>
+                        <a href='/profile'>
+                            <div className="menu_choice_cointainer_select menu_choice_cointainer--profile">
+                                <i class="fa-solid fa-user left"></i>Profile
+                            </div>
+                        </a>
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--like">
                             <i class="fa-solid fa-star left"></i>Yêu thích
                         </div>
