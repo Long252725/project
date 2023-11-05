@@ -1,14 +1,108 @@
 {
     "posts": [
         {
-            "name": "Hoa may giao",
-            "price": "100.000d",
-            "detals": "fhdkjfdlfhdkfjdhfkdhfkdfhdskf"
+            "name": "Đôi giày MLB Chunky Bigbal Boston Chính Hãng",
+            "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lkyzss7e1cylfd",
+            "type": "Công Nghệ/Technology",
+            "offer": "Mình muốn pass lại đôi này để mua một đôi giày thể thao, hoặc ai có giày thể thao nào same giá thì trade với mình cũng được ạ.",
+            "details": "Mua được 1 tuần nhưng chưa unbox.",
+            "price": "100.000đ"
         },
         {
-            "name": "Casio 580 Cux",
-            "price": "100.000d",
-            "detals": "fhdkjfdlfhdkfjdhfkdhfkdfhdskf"
+            "name": "Casio 580 Cũ",
+            "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnfj4lp1bbalbd",
+            "type": "Công Nghệ/Technology",
+            "offer": "Mình cần 1 cái chảo chống dính",
+            "details": "Bị mất cái nắp.",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Iphone 11 Promax 256GB Gold",
+            "image": "https://th.bing.com/th/id/OIP.YEen7kXWBil_Lc_BqjMHmAHaHa?pid=ImgDet&rs=1",
+            "type": "Công Nghệ/Technology",
+            "offer": "Tôi cần một cái laptop đủ mạnh dùng để code.",
+            "details": "Máy dùng được hơn nửa năm, bề ngoài vẫn tốt lắm ạ.",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Chuột không dây gaming Logitech G502 Hero Lightspeed Wireless Chính hãng",
+            "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lm24eivhm8kf58",
+            "type": "Công Nghệ/Technology",
+            "offer": "Con này mình mua giá 1tr3, mà giờ thấy tiếc quá vì chuột cũ mình dùng vẫn ok nên mình muốn trade bàn phím hoặc pass lại ạ",
+            "details": "Chuột mới dùng 1 lần",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Áo bó Venum Assassin's Creed Reloaded Rashguard Long - Black",
+            "image": "https://th.bing.com/th/id/OIP.Xenfl3rwONopSBH2R3TmZwHaI4?pid=ImgDet&rs=1",
+            "type": "Thời Trang/Fashion",
+            "offer": "Chiếc này mình mua về vì thấy người ta mặc đẹp, mà mình mặc xấu quá nên muốn pass lại hoặc trade với 1 cái áo phông gì đó chất chất",
+            "details": "Mình mua lâu rồi giờ mới nghĩ ra là có web trade đồ nên mình đăng, áo được mình bảo quản tốt ạ, kiểu cho ma nơ canh mặc í",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Bóng có chữ kí của Quang Hải",
+            "image": "https://th.bing.com/th/id/OIP.Zutf5YNpto0lE-dbvnHyCAHaHa?pid=ImgDet&rs=1",
+            "type": "Thể Thao/Sport",
+            "offer": "20tr or trade 1 bộ PC đủ để bắn PUBG mượt mà đồ hoạ HD",
+            "details": "Tại nhà mình hông có điều kiện, mà bữa đi coi đá bóng với bác tớ thì may mắn được Q.Hải cho và kí quả bóng mà mình thì lại không thần tượng Q.Hải lắm nên mình muốn có đồ nghề để sau này làm game thủ \n Mình có video quay lại nhé:3",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Gậy xo tập cơ 60kg",
+            "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-ljuw8g35fdf89f",
+            "type": "Thể Thao/Sport",
+            "offer": "Pass lại với giá hợp lí",
+            "details": "Phá đảo trò này rồi nên muốn pass để mua trò 80kg để phá đảo",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Balo PRETTYZYS Ahe227 màu đèn",
+            "image": "https://down-vn.img.susercontent.com/file/10697cf4df55bbca960d946323b0e3d2",
+            "type": "Thời Trang/Fashion",
+            "offer": "Đổi với cái balo cùng loại nhưng trắng xám",
+            "details": "Vì nó đẹp hơn",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Robot hút bụi NK02",
+            "image": "https://down-bs-vn.img.susercontent.com/vn-11134103-7r98o-ln8cr5h6zi9f02.webp",
+            "type": "Công Nghệ/Technology",
+            "offer": "Máy lọc không khí",
+            "details": "Robot vẫn còn tốt nhưng nhà nhiều trẻ con",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Áo khoác gió chống mưa, gió, tia UV tuyệt đối",
+            "image": "https://down-vn.img.susercontent.com/file/73ac054c7b124530c3a09f796094ab68",
+            "type": "Thời Trang/Fashion",
+            "offer": "Trade với áo ấm vì mùa đông sắp tới",
+            "details": "Áo dùng thì thấy chống mưa cũng tốt nhưng mà quần vẫn ướt",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Áo Hoddie Essential vải bông khá dày dặn",
+            "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lmgj8y7jpx3z2d",
+            "type": "Thời Trang/Fashion",
+            "offer": "Trade với áo khoác cùng giá hoặc thấp hơn nhưng có bù tiền",
+            "details": "Mình có 2 cái nên muốn trade lại",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Son 3CE Blur Matte (Newtro Wave or Misty Day)",
+            "image": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lhzqr4fqs5mtff",
+            "type": "Sắc Đẹp/Beauty",
+            "offer": "2 cái này khá giống nhau nên mình muốn trade 1 trong 2 để lấy màu nhạt hơn",
+            "details": "Mới thử vào tay chứ chưa chạm môi",
+            "price": "100.000đ"
+        },
+        {
+            "name": "Thiên Tài Bên Trái Kẻ Điên Bên Phải",
+            "image": "https://th.bing.com/th/id/R.70dbffb65024d522bf1fe3bd48b7e82e?rik=qMwGbD%2b4ct1S2g&pid=ImgRaw&r=0",
+            "type": "Sách/Book",
+            "offer": "Sách thể loại trinh thám hoặc tâm lý tội phạm",
+            "details": "Hơi mẻ ở góc 1 tý",
+            "price": "100.000đ"
         }
     ]
 }

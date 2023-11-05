@@ -41,6 +41,41 @@ function Header() {
                     <div className="menu_choice_account">
                         <div className="menu_choice_account--pic"></div>
                         <div className="menu_choice_account--name">Nguyễn Thành Long</div>
+                        <div className="menu_choice_account--note">
+                            Admin <i class="fa-solid fa-circle-check" style={{ color: '#4884ea' }}></i>{' '}
+                        </div>
+                    </div>
+                    <div className="menu_choice_cointainer">
+                        <a href='/'>
+                            <div className="menu_choice_cointainer_select menu_choice_cointainer--home">
+                                <i class="fa-solid fa-house left"></i> Trang chủ
+                            </div>
+                        </a>
+                        <a href='/donhang'>
+                            <div className="menu_choice_cointainer_select menu_choice_cointainer--product">
+                                <i class="fa-brands fa-product-hunt left"></i>Đơn hàng
+                            </div>
+                        </a>
+                        <div className="menu_choice_cointainer_select menu_choice_cointainer--his">
+                            <i class="fa-solid fa-clock-rotate-left left"></i>Lịch sử
+                        </div>
+                        <div className="menu_choice_cointainer_select menu_choice_cointainer--profile">
+                            <i class="fa-solid fa-user left"></i>Profile
+                        </div>
+                        <div className="menu_choice_cointainer_select menu_choice_cointainer--like">
+                            <i class="fa-solid fa-star left"></i>Yêu thích
+                        </div>
+                        <div className="menu_choice_cointainer_contact">
+                            <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--title">
+                                Liên hệ với chúng tôi
+                            </div>
+                            <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--face">
+                                <i class="fa-brands fa-facebook"></i> Facebook
+                            </div>
+                            <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--x">
+                                <i class="fa-brands fa-twitter"> </i> Twitter
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,23 +2,62 @@ import './body.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBookmark, faCircleUp } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-function Body() {
+function Body(props) {
     const [posts, setposts] = useState([]);
-    useEffect(()=> {
-        
-        function handletoTop() {
-            let btntoTop = document.getElementById('to-top')
-            btntoTop.onclick = ()=> {
-                window.scrollBy(0, -window.innerHeight);
-                
-                
-            }
-           
+    let startListObj = useRef([]);
+
+    useEffect(() => {
+        function handleStick() {
+            // console.log(maxHeight.clientHeight)
+            window.onscroll = function () {
+                let maxHeight = document.getElementById('cointainer').clientHeight;
+                var taskbar = document.getElementById('taskbar_body');
+                var startBox = document.getElementById('listproduct');
+
+                if (window.scrollY > 150) {
+                    taskbar.classList.add('sticky');
+                    startBox.style.position = 'fixed';
+                    startBox.style.right = '135px';
+
+                    if (window.scrollY > maxHeight - 601) {
+                        taskbar.classList.remove('sticky');
+                        taskbar.classList.add('sticky2');
+                        startBox.style.position = 'absolute'
+                        startBox.style.top = `${maxHeight - 626}px`
+                        startBox.style.right = '';
+                        // startBox.style.marginBottom = '30px'
+
+
+                        
+                    } else {
+                        taskbar.classList.add('sticky');
+                        taskbar.classList.remove('sticky2');
+                        startBox.style.position = 'fixed';
+                        startBox.style.top = ''
+                        startBox.style.right = '135px';
+                        // startBox.style.marginBottom = ''
+
+
+                    }
+                } else {
+                    taskbar.classList.remove('sticky');
+                    startBox.style.position = 'absolute';
+                    startBox.style.right = '';
+
+                }
+            };
         }
-        handletoTop()
-    }, [])
+        handleStick();
+        function handletoTop() {
+            let btntoTop = document.getElementById('to-top');
+            btntoTop.onclick = () => {
+                window.scrollTo(0, 0);
+            };
+        }
+        handletoTop();
+    }, []);
     useEffect(() => {
         function handlePost() {
             axios.get('http://localhost:3000/posts').then((posts) => {
@@ -28,9 +67,8 @@ function Body() {
         }
         handlePost();
         function handleWatchlist() {
-            let startList = [];
+            let startList = startListObj.current;
             let start = document.querySelectorAll('.product_save');
-            
             for (let i = 0; i < start.length; i++) {
                 start[i].addEventListener('click', (e) => {
                     let container = e.target.closest('.product');
@@ -51,9 +89,8 @@ function Body() {
     }, [posts]);
     return (
         <div id="body">
-          
-            <div className="cointainer">
-                <div className="taskbar_body">
+            <div className="cointainer" id="cointainer">
+                <div className="taskbar_body" id="taskbar_body">
                     <div className="box_search">
                         <div className="box_search_title">Xem thêm </div>
                         <input className="box_search_input" placeholder="Máy tính casio 580 cũ"></input>
@@ -95,7 +132,7 @@ function Body() {
                         </div>
                     </div>
                 </div>
-                <div className="listproduct">
+                <div className="listproduct" id="listproduct">
                     <div className="listproduct_title">Yêu thích</div>
                     <div className="listproduct_like"></div>
                 </div>
@@ -107,7 +144,15 @@ function Body() {
                                     {post.name}
                                 </div>
                                 <FontAwesomeIcon icon={faBookmark} className="product_save" />
-                                <div className="product_pic" id="product_pic"></div>
+                                <div
+                                    className="product_pic"
+                                    id="product_pic"
+                                    style={{
+                                        backgroundImage: `url('${post.image}')`,
+                                        backgroundPosition: 'center',
+                                        backgroundSize: 'cover',
+                                    }}
+                                ></div>
                                 <div className="price" id="price">
                                     Giá niêm yết:{' '}
                                     <div className="price_price" id="price_price">
@@ -127,14 +172,16 @@ function Body() {
                                     Chi tiết sản phẩm
                                 </div>
                                 <div className="noidungchitiet" id="noidungchitiet">
-                                    {post.detals}
+                                    {post.details}
                                 </div>
                             </div>
                         );
                     })}
                 </div>
             </div>
-            <div ><FontAwesomeIcon icon={faCircleUp} className="to-top" id='to-top' /></div>
+            <div>
+                <FontAwesomeIcon icon={faCircleUp} className="to-top" id="to-top" />
+            </div>
         </div>
     );
 }

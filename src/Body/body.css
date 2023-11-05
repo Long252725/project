@@ -9,6 +9,7 @@
     position: relative;
     top: 150px;
     min-height: 500px;
+    /* max-height: 1000px; */
     width: 1100px;
     /* height: 10000px; */
     padding: 0;
@@ -43,9 +44,10 @@
     background-color: #b5c8d818;
 }
 #product_name {
-    position: absolute;
+    position: relative;
     left: 30px;
-    top: 20px;
+    top: 15px;
+    max-width: 500px;
     /* background-color: blue; */
     font-size: 24px;
     font-weight: 600;
@@ -58,7 +60,7 @@
     background-size: cover;
     width: 250px;
     height: 200px;
-    margin-top: 60px;
+    margin-top: 35px;
     margin-left: 25px;
     border-radius: 10px;
     border: 1px solid #517da9;
@@ -83,7 +85,7 @@
 #price {
     position: absolute;
     left: 340px;
-    top: 90px;
+    top: 30%;
     font-size: 15px;
     font-weight: 600;
     display: flex;
@@ -96,12 +98,11 @@
     font-size: 25px;
 }
 
-
 #btn_buy {
-    top: 160px;
+    top: 47%;
     width: 150px;
     background-color: #ee4d2d;
-     height: 40px;
+    height: 40px;
     border: none;
     left: 360px;
     position: absolute;
@@ -120,7 +121,7 @@
 }
 
 #btn_trade {
-    top: 210px;
+    top: 60%;
     width: 150px;
     background-color: #517da9;
     height: 40px;
@@ -133,12 +134,12 @@
 /* box_search */
 .box_search {
     background-color: #ffede6fb;
+    border: 2px solid #ff5722;
     position: relative;
     width: 200px;
     height: 100px;
     top: 10px;
     margin: 2px;
-    border: 2px solid #ff5722;
     border-radius: 10px;
 }
 .box_search_title {
@@ -182,15 +183,23 @@
 /* taskbar_body */
 .taskbar_body {
     /* background-color: red; */
-    
+
     position: absolute;
     width: 210px;
     height: 500px;
     margin-left: 12px;
-
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    /* bottom: 0; */
+}
+.sticky2 {
+    position: absolute;
+    /* top: 0; */
+    bottom: 130px;
 }
 .boloc {
-
     position: relative;
     margin-top: 30px;
     background-color: #dcedff;
@@ -207,15 +216,16 @@
     margin: 15px 0;
 }
 
-.bocloc_adress--title, .bocloc_type--title {
+.bocloc_adress--title,
+.bocloc_type--title {
     margin-top: 5px;
     margin-left: 20px;
 }
-.bocloc_adress, .boloc_type {
+.bocloc_adress,
+.boloc_type {
     /* background-color: red; */
     border-bottom: 1px solid #517da9;
     border-top: 1px solid #517da9;
- 
 }
 .list {
     color: #263b50;
@@ -242,22 +252,20 @@
 }
 .product_save {
     position: absolute;
-    width: 400px;
-    height: 40px;
-    left: 400px;
+    top: 0;
+    left: 580px;
     color: #517da9;
     /* background-color: red; */
-    font-size: 30px;
+    font-size: 40px;
 }
 .product_save:hover {
     color: #ee4d2d;
-
 }
 /* listproduct */
 .listproduct {
     position: absolute;
     width: 180px;
-    max-height: 500px;
+    max-height: 600px;
     /* height: 200px; */
     right: 10px;
     top: 10px;
@@ -266,18 +274,17 @@
     border: 2px solid #517da9;
     margin-bottom: 20px;
     overflow-y: scroll;
-
 }
 .listproduct::-webkit-scrollbar {
     width: 5px;
-    background-color:#dcedff;
+    background-color: #dcedff;
     border-radius: 50px;
     height: 100px;
-   
-}.listproduct::-webkit-scrollbar-thumb {
+}
+.listproduct::-webkit-scrollbar-thumb {
     border-radius: 10px;
 
-    background-color:#517da9;
+    background-color: #517da9;
 }
 .listproduct_title {
     font-weight: 700;
@@ -290,7 +297,6 @@
     cursor: pointer;
     background-color: #ffe3dafb;
     padding: 5px 0px;
-    
 }
 .listproduct_like {
     /* background-color: red; */
@@ -306,7 +312,7 @@
     /* border-top: 3px solid #517da9; */
     /* border-right: 3px solid #517da9; */
     /* background-color: blue; */
-    height: 35px;
+    /* height: 35px; */
     border-radius: 5px;
     padding: 7px 10px;
     box-sizing: border-box;
@@ -320,7 +326,7 @@
 #listproduct_like_select:hover {
     transform: scale(0.99);
     /* border-bottom: 1px solid #ee4d2d; */
-    background-color: #fff5f1 ;
+    background-color: #fff5f1;
 }
 #aaa {
     color: red;
