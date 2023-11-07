@@ -1,11 +1,10 @@
 import './body.css';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faBookmark, faCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useRef, useState } from 'react';
 import React from 'react';
-import { Player } from 'video-react';
-import './../../node_modules/video-react/dist/video-react.css';
+import ReactPlayer from 'react-player';
 
 function Body(props) {
     const [posts, setposts] = useState([]);
@@ -43,13 +42,7 @@ function Body(props) {
             };
         }
         handleStick();
-        function handletoTop() {
-            let btntoTop = document.getElementById('to-top');
-            btntoTop.onclick = () => {
-                window.scrollTo(0, 0);
-            };
-        }
-        handletoTop();
+
         function handleNextSp() {
             let btnNextSp = document.getElementById('next-sp');
             btnNextSp.onclick = () => {
@@ -59,6 +52,38 @@ function Body(props) {
             };
         }
         handleNextSp();
+        function handleUpload() {
+            let upLoad = document.getElementById('upload');
+            let nameInput = document.getElementById('upload_box_select_input--name');
+            let picInput = document.getElementById('upload_box_select_input--pic');
+            let priceInput = document.getElementById('upload_box_select_input--price');
+            let detailsInput = document.getElementById('upload_box_select_input--details');
+            let btnDang = document.getElementById('btn_upload');
+            let boxDone = document.getElementById('upload_box_done');
+            let boxInput = document.getElementById('upload_box_cointainer');
+            let upLoadBox = document.getElementById('upload_box');
+            let lopPhuBody = document.getElementById('lopphu_body');
+            let header = document.getElementById('header');
+            upLoad.onclick = () => {
+                lopPhuBody.style.display = 'block';
+                upLoadBox.style.display = 'block';
+                boxInput.style.display = 'block';
+                boxDone.style.display = 'none';
+                header.style.zIndex = '9';
+            };
+            btnDang.onclick = () => {
+                boxInput.style.display = 'none';
+                boxDone.style.display = 'block';
+                console.log(nameInput.value, picInput.value, priceInput.value, detailsInput.value);
+            };
+            lopPhuBody.onclick = () => {
+                header.style.zIndex = '16';
+
+                lopPhuBody.style.display = 'none';
+                upLoadBox.style.display = 'none';
+            };
+        }
+        handleUpload();
     }, []);
     useEffect(() => {
         function handlePost() {
@@ -91,9 +116,7 @@ function Body(props) {
     }, [posts]);
     return (
         <div id="body">
-            
             <div className="cointainer" id="cointainer">
-            
                 <div className="taskbar_body" id="taskbar_body">
                     <div className="box_search">
                         <div className="box_search_title">Xem thêm </div>
@@ -141,19 +164,23 @@ function Body(props) {
                     {posts.map((post, index) => {
                         return (
                             <div className="product" id="product" key={index}>
-                                <div className="product_name" id="product_name">
-                                    {post.name}
-                                </div>
+                                <a href="/profile">
+                                    <div className="product_name" id="product_name">
+                                        {post.name}
+                                    </div>
+                                </a>
                                 <FontAwesomeIcon icon={faBookmark} className="product_save" />
-                                <div
-                                    className="product_pic"
-                                    id="product_pic"
-                                    style={{
-                                        backgroundImage: `url('${post.image}')`,
-                                        backgroundPosition: 'center',
-                                        backgroundSize: 'cover',
-                                    }}
-                                ></div>
+                                <a href="/profile">
+                                    <div
+                                        className="product_pic"
+                                        id="product_pic"
+                                        style={{
+                                            backgroundImage: `url('${post.image}')`,
+                                            backgroundPosition: 'center',
+                                            backgroundSize: 'cover',
+                                        }}
+                                    ></div>
+                                </a>
                                 <div className="price" id="price">
                                     Giá niêm yết:{' '}
                                     <div className="price_price" id="price_price">
@@ -180,20 +207,78 @@ function Body(props) {
                     })}
                 </div>
             </div>
-            <div>
-                <FontAwesomeIcon icon={faCircleUp} className="to-top" id="to-top" />
-            </div>
+
             <div className="more">
                 <div className="more_title">Otin Store - Không lo đồ cũ</div>
                 <div className="more_video">
-                    <Player
-                        playsInline
-                        poster="https://z-p3-scontent.fvii1-1.fna.fbcdn.net/v/t1.15752-9/394517794_6954486771313240_3684609075480503755_n.png?_nc_cat=101&ccb=1-7&_nc_sid=8cd0a2&_nc_ohc=MaqX6WfeqsgAX9DaTej&_nc_ht=z-p3-scontent.fvii1-1.fna&oh=03_AdS0dqDtGgxY3cHBHnx4EcgXm83JVYiorYJtjo11Jj88Vw&oe=656EC986"
-                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+                    <ReactPlayer
+                        url="https://assets-global.website-files.com/63ba8e823d3d7a927e5c2971/63baa96818d4e0e50d349d2b_shiny-bull-in-costume-made-of-mirrors-dancing-robo-2021-08-30-14-52-45-utc%20(1)-transcode.mp4"
+                        width="1100px"
+                        height="620px"
+                        position="absolute"
+                        controls={false}
+                        loop
+                        playing={true}
+                        muted
                     />
                 </div>
             </div>
-            
+            <div className="lopphu_body" id="lopphu_body"></div>
+            <div className="upload" id="upload">
+                Đăng bài
+            </div>
+            <div className="upload_box" id="upload_box">
+                <div className="upload_box_title">Đăng tải sản phẩm</div>
+                <div id="upload_box_cointainer">
+                    <div className="upload_box_cointainer">
+                        <div className="upload_box_select upload_box_name left">
+                            Tên mặt hàng
+                            <input
+                                type="text"
+                                className="upload_box_select_input"
+                                id="upload_box_select_input--name"
+                                placeholder="Máy tính CASIO 580 VNPlus"
+                            ></input>
+                        </div>
+                        <div className="upload_box_select upload_box_pic left">
+                            Link ảnh
+                            <input
+                                className="upload_box_select_input"
+                                id="upload_box_select_input--pic"
+                                placeholder="VD: https://hips.hearstapps.com/hmg-prod/images/index-avatar-1665421955.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=1200:*"
+                            ></input>
+                        </div>
+                        <div className="upload_box_select upload_box_price left">
+                            Giá bán
+                            <input
+                                type="number"
+                                className="upload_box_select_input"
+                                id="upload_box_select_input--price"
+                                placeholder="100.000k"
+                            ></input>
+                        </div>
+                        <div className="upload_box_select upload_box_details left">
+                            Chi tiết
+                            <input
+                                className="upload_box_select_input upload_box_select_input--details"
+                                id="upload_box_select_input--details"
+                                maxLength={50}
+                                placeholder="Máy dùng được hơn nửa năm, bề ngoài vẫn tốt lắm ạ."
+                            ></input>
+                        </div>
+                    </div>
+                </div>
+                <div id="upload_box_done">
+                    <div className="upload_box_done">
+                        <div className="upload_box_done_title">
+                            <i class="fa-regular fa-circle-check left"></i>Đăng bài thành công !
+                        </div>
+                    </div>
+                </div>
+                <div className="btn_upload btn_upload2" id="btn_upload">
+                    Đăng
+                </div>
+            </div>
         </div>
     );
 }

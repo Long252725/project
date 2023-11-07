@@ -20,12 +20,16 @@ function App() {
                         <Fragment>
                             <Header />
                             <Body />
-                            <Bottom/>
+                            <Bottom />
                         </Fragment>
                     }
                 ></Route>
                 <Route path="/singup" element={<Singup />}></Route>
-                <Route path="/profile" element={<Profile />}></Route>
+                <Route path="/profile" element={<Fragment>
+                    <Header/>
+                    <Profile />
+                    <Bottom/>
+                </Fragment>}></Route>
                 <Route path="/donhang" element={<Buy />}></Route>
             </Routes>
         </div>

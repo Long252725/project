@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    z-index: 8;
+    z-index: 13;
 }
 .qc {
     position: absolute;
@@ -257,13 +257,10 @@
     border-radius: 10px;
 }
 .selecter {
-
     height: 20px;
-   
 }
 .selecter:hover {
     transform: scale(0.98);
-
 }
 .product_save {
     position: absolute;
@@ -348,18 +345,7 @@
 #aaa {
     color: red;
 }
-.to-top {
-    position: fixed;
-    right: 20px;
-    bottom: 40px;
-    z-index: 9;
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    /* background-color: red; */
-    color: #517da9;
-    cursor: pointer;
-}
+
 /* more */
 .more {
     width: 1100px;
@@ -380,11 +366,6 @@
     color: #263b50;
 }
 .more_video {
-    width: 700px;
-    height: auto;
-    position: relative;
-    left: 200px;
-    border: 5px solid #517da9;
 }
 .next-sp {
     position: absolute;
@@ -394,9 +375,142 @@
     padding: 10px 30px;
     background-color: #d8ebff;
     border: 2px solid #517da9;
-
 }
 .next-sp:hover {
     cursor: pointer;
     transform: scale(0.97);
 }
+/* dăng bai */
+.upload {
+    padding: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 120px;
+    background-color: #517da9;
+    border-radius: 10px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 9;
+}
+.upload_box {
+    position: fixed;
+    width: 70%;
+    height: 500px;
+    background-color: white;
+    top: 50px;
+    left: 200px;
+    border-radius: 10px;
+    z-index: 17;
+    
+    display: none;  
+}
+.lopphu_body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.916);
+    z-index: 16;
+    display: none;
+}
+.upload_box_title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #29354e;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+}
+.upload_box_select {
+    font-size: 19px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    margin-left: 100px;
+    margin-bottom: 20px;
+}
+.upload_box_cointainer {
+    border-radius: 10px;
+    border: 2px solid #29354e;
+    position: relative;
+    top: 100px;
+    height: 300px;
+    width: 80%;
+    left:100px;
+    padding-top: 60px;
+    box-sizing: border-box;
+    
+}
+.upload_box_select_input {
+    position: absolute;
+    left: 250px;
+    outline: none;
+    width: 300px;
+    height: 28px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.upload_box_select_input:focus {
+    border:1px solid #4884ea;
+}
+.upload_box_select_input--details {
+    
+}
+.btn_upload {
+    padding: 10px 30px;
+    background-color: #3c4c6c;
+    font-size: 17px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    color: white;
+    position: absolute;
+    right: 50px;
+    border-radius: 10px;
+    bottom: 20px;
+}
+.btn_upload:hover {
+    cursor: pointer;
+    background-color: #fff5f1;
+    border: 1px solid #f24320;
+    color: #f24320;
+}
+.upload_box_done {
+    border-radius: 10px;
+    border: 2px solid #29354e;
+    position: absolute;
+    top: 100px;
+    height: 300px;
+    width: 80%;
+    left:100px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upload_box_done_title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    padding: 10px 20px;
+    background-color: #4884ea;
+    border-radius: 30px;
+    
+}
+#upload_box_done {
+    display: none;
+}
+/* .btn_upload2 {
+    background-color: rgb(0, 216, 68);
+} */

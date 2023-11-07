@@ -1,6 +1,6 @@
 import './header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faHouse, faCircleUp } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 
 function Header() {
@@ -19,12 +19,23 @@ function Header() {
             };
         }
         handleMenu();
+        
+        function handletoTop() {
+            let btntoTop = document.getElementById('to-top');
+            btntoTop.onclick = () => {
+                window.scrollTo(0, 0);
+            };
+        }
+        handletoTop();
     }, []);
     return (
         <div>
-            <div className="header">
-                <a href='/'><div className="header_pic"></div>
+            <div className="header" id='header'>
+                <a href='/'>
+                    <div className='box_logo'>
+                    <div className="header_pic"></div>
                     <div className='header_pic_name'></div>
+                    </div>
                 </a>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
@@ -40,15 +51,21 @@ function Header() {
                         Home
                     </div>
                 </div>
+                <div>
+                <FontAwesomeIcon icon={faCircleUp} className="to-top" id="to-top" />
+            </div>
+            <div className="lopphu" id="lopphu"></div>
 
                 <div className="menu_choice" id="menu_choice">
-                    <div className="menu_choice_account">
-                        <div className="menu_choice_account--pic"></div>
-                        <div className="menu_choice_account--name">Nguyễn Thành Long</div>
-                        <div className="menu_choice_account--note">
-                            Admin <i class="fa-solid fa-circle-check" style={{ color: '#4884ea' }}></i>{' '}
+                    <a href='/profile'>
+                        <div className="menu_choice_account">
+                            <div className="menu_choice_account--pic"></div>
+                            <div className="menu_choice_account--name">Nguyễn Thành Long</div>
+                            <div className="menu_choice_account--note">
+                                Admin <i class="fa-solid fa-circle-check" style={{ color: '#4884ea' }}></i>{' '}
+                            </div>
                         </div>
-                    </div>
+                    </a>
                     <div className="menu_choice_cointainer">
                         <a href='/'>
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--home">
@@ -85,7 +102,9 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div className="lopphu" id="lopphu"></div>
+
+            
+            
         </div>
     );
 }

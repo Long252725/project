@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     font-size: 14px;
+    z-index: 15;
 }
 a {
     padding: 0;
@@ -15,6 +16,21 @@ a {
     text-decoration: none;
     cursor: pointer;
     z-index: 10;
+}
+/* .box_logo {
+    background-color: #29354e;
+    z-index: 10;
+} */
+.to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    /* background-color: red; */
+    color: #517da9;
+    cursor: pointer;
 }
 .header_pic {
     width: 70px;
@@ -118,15 +134,16 @@ a {
 /* menu */
 .menu {
     background-color: #f24320;
+   
 }
 .menu_choice {
+    z-index: 12;
     position: fixed;
     width: 320px;
     top: 0;
     bottom: 0;
     background-color: white;
     right: 0;
-    z-index: 10;
     border-radius: 10px 0 0 10px;
     border-left: 3px solid #517da9;
     display: none;
@@ -177,8 +194,8 @@ a {
     right: 0;
     top: 0;
     bottom: 0;
+    z-index: 10;
     background-color: rgba(128, 128, 128, 0.446);
-    z-index: 9;
     display: none;
 }
 .iconmenu {
@@ -264,3 +281,4 @@ a {
 .menu_choice_cointainer_contact_select--x:hover {
     color: rgb(45, 150, 255);
 }
+/* dăng sp */
