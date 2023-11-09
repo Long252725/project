@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import React from 'react';
 import ReactPlayer from 'react-player';
 
-function Body(props) {
+function Body() {
     const [posts, setposts] = useState([]);
     let startListObj = useRef([]);
 
@@ -78,7 +78,6 @@ function Body(props) {
             };
             lopPhuBody.onclick = () => {
                 header.style.zIndex = '16';
-
                 lopPhuBody.style.display = 'none';
                 upLoadBox.style.display = 'none';
             };
@@ -89,8 +88,16 @@ function Body(props) {
         function handlePost() {
             axios.get('https://test-api-n3fv.onrender.com/posts').then((posts) => {
                 let postss = posts.data;
+                console.log(postss)
                 setposts(postss);
             });
+            // fetch('http://localhost:3000/posts')
+            //     .then(function (res) {
+            //         return res.json();
+            //     })
+            //     .then(function (posts) {
+            //         setposts(posts);
+            //     });
         }
         handlePost();
         function handleWatchlist() {
@@ -113,6 +120,26 @@ function Body(props) {
             }
         }
         handleWatchlist();
+        function handleComment() {
+            let btnComments = document.querySelectorAll('#product_comment');
+            let boxcomment = document.getElementById('boxcomment');
+            let lopPhuBodyy = document.getElementById('lopphu_body2');
+            let header = document.getElementById('header');
+
+            for (let i = 0; i < btnComments.length; i++) {
+                btnComments[i].onclick = () => {
+                    boxcomment.style.display = 'block';
+                    lopPhuBodyy.style.display = 'block';
+                    header.style.zIndex = '9';
+                };
+            }
+            lopPhuBodyy.onclick = () => {
+                header.style.zIndex = '16';
+                lopPhuBodyy.style.display = 'none';
+                boxcomment.style.display = 'none';
+            };
+        }
+        handleComment();
     }, [posts]);
     return (
         <div id="body">
@@ -128,7 +155,6 @@ function Body(props) {
                         <div className="bocloc_adress">
                             <div className="bocloc_adress--title font_normal ">Nơi bán</div>
                             <ul className="list">
-                                <li className="selecter">Nghệ An</li>
                                 <li className="selecter">Nghệ An</li>
                                 <li className="selecter">Nghệ An</li>
                                 <li className="selecter">Nghệ An</li>
@@ -202,6 +228,17 @@ function Body(props) {
                                 <div className="noidungchitiet" id="noidungchitiet">
                                     {post.details}
                                 </div>
+                                <div className="product_box_tt">
+                                    <div className="product_box_tt_select product_like" id="product_like">
+                                        <i class="fa-regular fa-thumbs-up left"></i>Like
+                                    </div>
+                                    <div className="product_box_tt_select product_comment" id="product_comment">
+                                        <i class="fa-regular fa-comments left "></i>Comment
+                                    </div>
+                                    <div className="product_box_tt_select product_share" id="product_share">
+                                        <i class="fa-solid fa-arrow-up-from-bracket left"></i>Share
+                                    </div>
+                                </div>
                             </div>
                         );
                     })}
@@ -224,6 +261,7 @@ function Body(props) {
                 </div>
             </div>
             <div className="lopphu_body" id="lopphu_body"></div>
+            <div className="lopphu_body2" id="lopphu_body2"></div>
             <div className="upload" id="upload">
                 Đăng bài
             </div>
@@ -277,6 +315,33 @@ function Body(props) {
                 </div>
                 <div className="btn_upload btn_upload2" id="btn_upload">
                     Đăng
+                </div>
+            </div>
+            <div className="boxcomment" id="boxcomment">
+                <div className="boxcomment_top"></div>
+                <div className="boxcomment_comments">
+                    <div className="boxcomment_comments_select">
+                        <div className="boxcomment_comments_select--pic"></div>
+                        <div className="boxcomment_comments_select--box">
+                            <div className="boxcomment_comments_select--name">
+                                Nguyễn Thành Long{' '}
+                                <i class="fa-solid fa-circle-check right " style={{ color: '#4884ea' }}></i>
+                            </div>
+
+                            <div className="boxcomment_comments_select--nd">
+                                {' '}
+                                Chiếc này mình mua về vì thấy người ta mặc đẹp, mà mình mặc xấu quá nên muốn pass lại
+                                hoặc trade với 1 cái áo phông gì đó chất chất
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="boxcomment_taskbar">
+                    <div className="boxcomment_taskbar_pic"></div>
+                    <div className="boxcomment_taskbar_input">
+                        <input className="boxcomment_taskbar_input--input"></input>
+                        <i class="fa-solid fa-paper-plane iconSend"></i>
+                    </div>
                 </div>
             </div>
         </div>
