@@ -26,9 +26,7 @@ function Body() {
         }
         handleComment();
         function sendComment(data) {
-            axios.post('https://test-api-n3fv.onrender.com/comments', {
-                nd: data,
-            })
+            axios.get('https://test-api-n3fv.onrender.com/comments')
                 
                 .then((commentss) => {
                     console.log(commentss.data);
