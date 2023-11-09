@@ -9,7 +9,36 @@ import ReactPlayer from 'react-player';
 function Body() {
     const [posts, setposts] = useState([]);
     let startListObj = useRef([]);
+    let listComments = useRef([]);
+    useEffect(() => {
+        function handleComment() {
+            let inputComment = document.getElementById('boxcomment_taskbar_input--input');
+            let btnSend = document.getElementById('iconSend');
+            btnSend.onclick = () => {
+                let formComments = {
+                    nd: inputComment.value,
+                };
+                console.log(formComments);
+                sendComment(formComments);
+            };
 
+            
+        }
+        handleComment();
+        function sendComment(data) {
+            axios.post('https://test-api-n3fv.onrender.com/posts', {
+                nd: data,
+            })
+                
+                .then((commentss) => {
+                    console.log(commentss.data);
+                   
+                })
+                .catch(rejected => {
+                    console.log(rejected);
+                });
+        }
+    }, []);
     useEffect(() => {
         function handleStick() {
             window.onscroll = function () {
@@ -86,20 +115,23 @@ function Body() {
     }, []);
     useEffect(() => {
         function handlePost() {
-            axios.get('https://test-api-n3fv.onrender.com/posts').then((posts) => {
-                let postss = posts.data;
-                console.log(postss)
-                setposts(postss);
-            });
-            // fetch('http://localhost:3000/posts')
-            //     .then(function (res) {
-            //         return res.json();
-            //     })
-            //     .then(function (posts) {
-            //         setposts(posts);
-            //     });
+            // axios.get('https://test-api-n3fv.onrender.com/posts').then((posts) => {
+            //     let postss = posts.data;
+            //     console.log(postss)
+            //     setposts(postss);
+            // });
+            fetch('http://localhost:3000/posts')
+                .then(function (res) {
+                    return res.json();
+                })
+                .then(function (posts) {
+                    setposts(posts);
+                });
         }
         handlePost();
+       
+    }, []);
+    useEffect(()=> {
         function handleWatchlist() {
             let startList = startListObj.current;
             let start = document.querySelectorAll('.product_save');
@@ -140,7 +172,7 @@ function Body() {
             };
         }
         handleComment();
-    }, [posts]);
+    }, [posts])
     return (
         <div id="body">
             <div className="cointainer" id="cointainer">
@@ -318,29 +350,31 @@ function Body() {
                 </div>
             </div>
             <div className="boxcomment" id="boxcomment">
-                <div className="boxcomment_top"></div>
+                <div className="boxcomment_top">
+                    <i class="fa-solid fa-comment-dots left"></i>Comments
+                </div>
                 <div className="boxcomment_comments">
-                    <div className="boxcomment_comments_select">
-                        <div className="boxcomment_comments_select--pic"></div>
-                        <div className="boxcomment_comments_select--box">
-                            <div className="boxcomment_comments_select--name">
-                                Nguyễn Thành Long{' '}
-                                <i class="fa-solid fa-circle-check right " style={{ color: '#4884ea' }}></i>
-                            </div>
+                    {/* {listComments.current.map((comment) => {
+                        return (
+                            <div className="boxcomment_comments_select">
+                                <div className="boxcomment_comments_select--pic"></div>
+                                <div className="boxcomment_comments_select--box">
+                                    <div className="boxcomment_comments_select--name">
+                                        Nguyễn Thành Long{' '}
+                                        <i class="fa-solid fa-circle-check right " style={{ color: '#4884ea' }}></i>
+                                    </div>
 
-                            <div className="boxcomment_comments_select--nd">
-                                {' '}
-                                Chiếc này mình mua về vì thấy người ta mặc đẹp, mà mình mặc xấu quá nên muốn pass lại
-                                hoặc trade với 1 cái áo phông gì đó chất chất
+                                    <div className="boxcomment_comments_select--nd">{comment}</div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        );
+                    })} */}
                 </div>
                 <div className="boxcomment_taskbar">
                     <div className="boxcomment_taskbar_pic"></div>
                     <div className="boxcomment_taskbar_input">
-                        <input className="boxcomment_taskbar_input--input"></input>
-                        <i class="fa-solid fa-paper-plane iconSend"></i>
+                        <input className="boxcomment_taskbar_input--input" id="boxcomment_taskbar_input--input"></input>
+                        <i class="fa-solid fa-paper-plane iconSend" id="iconSend"></i>
                     </div>
                 </div>
             </div>
