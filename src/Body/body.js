@@ -29,9 +29,10 @@ function Body() {
             let conetnt = {
                 nd: data,
             }
-            axios.put('https://test-api-n3fv.onrender.com/comments', conetnt)
+            axios.post('https://test-api-n3fv.onrender.com/comments', conetnt)
                 
                 .then((commentss) => {
+                    
                     console.log(commentss.data);
                    
                 })
