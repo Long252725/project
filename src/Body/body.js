@@ -26,7 +26,10 @@ function Body() {
         }
         handleComment();
         function sendComment(data) {
-            axios.get('https://test-api-n3fv.onrender.com/comments')
+            let conetnt = {
+                nd: data,
+            }
+            axios.put('https://test-api-n3fv.onrender.com/comments', conetnt)
                 
                 .then((commentss) => {
                     console.log(commentss.data);
@@ -36,6 +39,17 @@ function Body() {
                     console.log(rejected);
                 });
         }
+        // function sendComment(data) {
+        //     axios.get('https://test-api-n3fv.onrender.com/comments')
+                
+        //         .then((commentss) => {
+        //             console.log(commentss.data);
+                   
+        //         })
+        //         .catch(rejected => {
+        //             console.log(rejected);
+        //         });
+        // }
     }, []);
     useEffect(() => {
         function handleStick() {
