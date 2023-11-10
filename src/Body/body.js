@@ -9,6 +9,7 @@ import { json } from 'react-router-dom';
 
 function Body() {
     const [posts, setposts] = useState([]);
+    const [comment, setComment] = useState([])
     let startListObj = useRef([]);
     let listComments = useRef([]);
     useEffect(() => {
@@ -33,6 +34,7 @@ function Body() {
                 
                 .then(comment => {
                     console.log(comment.data)
+                    setComment(comment)
                 })
                 .catch(rejected => {
                     console.log(rejected);
@@ -365,7 +367,7 @@ function Body() {
                     <i className="fa-solid fa-comment-dots left"></i>Comments
                 </div>
                 <div className="boxcomment_comments">
-                    {/* {listComments.current.map((comment) => {
+                    {comment.map((comment) => {
                         return (
                             <div className="boxcomment_comments_select">
                                 <div className="boxcomment_comments_select--pic"></div>
@@ -379,7 +381,7 @@ function Body() {
                                 </div>
                             </div>
                         );
-                    })} */}
+                    })}
                 </div>
                 <div className="boxcomment_taskbar">
                     <div className="boxcomment_taskbar_pic"></div>
