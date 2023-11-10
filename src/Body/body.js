@@ -118,7 +118,7 @@ function Body() {
             //     console.log(postss)
             //     setposts(postss);
             // });
-            fetch('http://localhost:3000/posts')
+            fetch('https://test-api-n3fv.onrender.com/posts')
                 .then(function (res) {
                     return res.json();
                 })
