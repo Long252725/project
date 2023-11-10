@@ -29,11 +29,11 @@ function Body() {
         handleComment();
         function sendComment(data) {
             
-            axios.post('https://test-api-n3fv.onrender.com/comments', {
-                nd: data
-            })
-                
-                
+            axios({
+                method: 'post',
+                url: 'https://test-api-n3fv.onrender.com/comments',
+                data: { nd: data }
+              })
                 .then(comment => {
                     console.log(comment.data)
                     setComment(comment.data)
