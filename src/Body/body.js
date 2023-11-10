@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player';
 
 function Body() {
     const [posts, setposts] = useState([]);
-    const [comment, setComment] = useState([])
+    const [comment, setComment] = useState([]);
     let startListObj = useRef([]);
     let listComments = useRef([]);
     useEffect(() => {
@@ -22,36 +22,31 @@ function Body() {
                 console.log(formComments);
                 sendComment(formComments);
             };
-
-            
         }
         handleComment();
         function sendComment(data) {
-            
-            axios.post('https://test-api-n3fv.onrender.com/comments', {
-                nd: data
-            })
-                
-                
-                .then(comment => {
-                    console.log(comment.data)
-                    setComment(comment.data)
+            axios
+                .post('https://test-api-n3fv.onrender.com/comments', {
+                    nd: data,
                 })
-                .catch(rejected => {
+
+                .then((comment) => {
+                    console.log(comment.data);
+                    setComment(comment.data);
+                })
+                .catch((rejected) => {
                     console.log(rejected);
                 });
-                // axios.get('https://test-api-n3fv.onrender.com/comments')
-                
-                
-                // .then(comment => {
-                //     console.log(comment.data)
-                //     setComment(comment.data)
-                // })
-                // .catch(rejected => {
-                //     console.log(rejected);
-                // });
+            // axios.get('https://test-api-n3fv.onrender.com/comments')
+
+            // .then(comment => {
+            //     console.log(comment.data)
+            //     setComment(comment.data)
+            // })
+            // .catch(rejected => {
+            //     console.log(rejected);
+            // });
         }
-        
     }, []);
     useEffect(() => {
         function handleStick() {
@@ -129,23 +124,20 @@ function Body() {
     }, []);
     useEffect(() => {
         function handlePost() {
-            // axios.get('https://test-api-n3fv.onrender.com/posts').then((posts) => {
-            //     let postss = posts.data;
-            //     console.log(postss)
-            //     setposts(postss);
-            // });
-            fetch('https://test-api-n3fv.onrender.com/posts')
-                .then(function (res) {
-                    return res.json();
-                })
-                .then(function (posts) {
-                    setposts(posts);
-                });
+            axios.get('https://test-api-n3fv.onrender.com/posts')
+            .then((posts) => {
+                let postss = posts.data;
+                console.log(postss)
+                setposts(postss);
+            })
+            .catch((rejected) => {
+                console.log(rejected);
+            });
+            
         }
         handlePost();
-       
     }, []);
-    useEffect(()=> {
+    useEffect(() => {
         function handleWatchlist() {
             let startList = startListObj.current;
             let start = document.querySelectorAll('.product_save');
@@ -186,7 +178,7 @@ function Body() {
             };
         }
         handleComment();
-    }, [posts])
+    }, [posts]);
     return (
         <div id="body">
             <div className="cointainer" id="cointainer">
