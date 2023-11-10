@@ -34,7 +34,7 @@ function Body() {
                 
                 .then(comment => {
                     console.log(comment.data)
-                    setComment(comment)
+                    setComment(comment.data)
                 })
                 .catch(rejected => {
                     console.log(rejected);
