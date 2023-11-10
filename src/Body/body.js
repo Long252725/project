@@ -367,21 +367,7 @@ function Body() {
                     <i className="fa-solid fa-comment-dots left"></i>Comments
                 </div>
                 <div className="boxcomment_comments">
-                    {comment.map((comment) => {
-                        return (
-                            <div className="boxcomment_comments_select">
-                                <div className="boxcomment_comments_select--pic"></div>
-                                <div className="boxcomment_comments_select--box">
-                                    <div className="boxcomment_comments_select--name">
-                                        Nguyễn Thành Long{' '}
-                                        <i class="fa-solid fa-circle-check right " style={{ color: '#4884ea' }}></i>
-                                    </div>
-
-                                    <div className="boxcomment_comments_select--nd">{comment}</div>
-                                </div>
-                            </div>
-                        );
-                    })}
+                    {console.log(comment)}
                 </div>
                 <div className="boxcomment_taskbar">
                     <div className="boxcomment_taskbar_pic"></div>
