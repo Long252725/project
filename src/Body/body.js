@@ -29,7 +29,9 @@ function Body() {
         handleComment();
         function sendComment(data) {
             
-            axios.get('https://test-api-n3fv.onrender.com/comments')
+            axios.post('https://test-api-n3fv.onrender.com/comments', {
+                nd: data
+            })
                 
                 
                 .then(comment => {
@@ -39,18 +41,18 @@ function Body() {
                 .catch(rejected => {
                     console.log(rejected);
                 });
-        }
-        // function sendComment(data) {
-        //     axios.get('https://test-api-n3fv.onrender.com/comments')
+                // axios.get('https://test-api-n3fv.onrender.com/comments')
                 
-        //         .then((commentss) => {
-        //             console.log(commentss.data);
-                   
-        //         })
-        //         .catch(rejected => {
-        //             console.log(rejected);
-        //         });
-        // }
+                
+                // .then(comment => {
+                //     console.log(comment.data)
+                //     setComment(comment.data)
+                // })
+                // .catch(rejected => {
+                //     console.log(rejected);
+                // });
+        }
+        
     }, []);
     useEffect(() => {
         function handleStick() {
