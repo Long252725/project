@@ -30,7 +30,7 @@ function Body() {
         function sendComment(data) {
             
             axios.post('https://test-api-n3fv.onrender.com/comments', {
-                nd: "djhsad 00000"
+                nd: data
             })
                 
                 
