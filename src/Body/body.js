@@ -5,6 +5,7 @@ import { faMagnifyingGlass, faBookmark } from '@fortawesome/free-solid-svg-icons
 import { useEffect, useRef, useState } from 'react';
 import React from 'react';
 import ReactPlayer from 'react-player';
+import { json } from 'react-router-dom';
 
 function Body() {
     const [posts, setposts] = useState([]);
@@ -27,14 +28,18 @@ function Body() {
         handleComment();
         function sendComment(data) {
             let conetnt = {
-                nd: data,
+                method: "POST",
+                body: JSON.stringify(data)
             }
-            axios.post('https://test-api-n3fv.onrender.com/comments', conetnt)
+            fetch('https://test-api-n3fv.onrender.com/comments', conetnt)
                 
-                .then((commentss) => {
-                    
+                .then((res) => {
+                    res.json()
                     console.log(commentss.data);
                    
+                })
+                .then(comment => {
+                    console.log(comment)
                 })
                 .catch(rejected => {
                     console.log(rejected);
