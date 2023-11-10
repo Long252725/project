@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import React from 'react';
 import ReactPlayer from 'react-player';
 import { json } from 'react-router-dom';
-
+import instance from '../../customize-axios';
 function Body() {
     const [posts, setposts] = useState([]);
     const [comment, setComment] = useState([])
@@ -29,9 +29,19 @@ function Body() {
         handleComment();
         function sendComment(data) {
             
-            axios.post('https://test-api-n3fv.onrender.com/comments', {
-                nd: data
-            })
+            // axios.post('https://test-api-n3fv.onrender.com/comments', {
+            //     nd: data
+            // })
+                
+                
+            //     .then(comment => {
+            //         console.log(comment.data)
+            //         setComment(comment.data)
+            //     })
+            //     .catch(rejected => {
+            //         console.log(rejected);
+            //     });
+                axios.get('/comments')
                 
                 
                 .then(comment => {
@@ -41,16 +51,6 @@ function Body() {
                 .catch(rejected => {
                     console.log(rejected);
                 });
-                // axios.get('https://test-api-n3fv.onrender.com/comments')
-                
-                
-                // .then(comment => {
-                //     console.log(comment.data)
-                //     setComment(comment.data)
-                // })
-                // .catch(rejected => {
-                //     console.log(rejected);
-                // });
         }
         
     }, []);
