@@ -19,7 +19,7 @@ function Header() {
             };
         }
         handleMenu();
-        
+
         function handletoTop() {
             let btntoTop = document.getElementById('to-top');
             btntoTop.onclick = () => {
@@ -30,17 +30,17 @@ function Header() {
     }, []);
     return (
         <div>
-            <div className="header" id='header'>
-                <a href='/'>
-                    <div className='box_logo'>
-                    <div className="header_pic"></div>
-                    <div className='header_pic_name'></div>
+            <div className="header" id="header">
+                <a href="/">
+                    <div className="box_logo">
+                        <div className="header_pic"></div>
+                        <div className="header_pic_name"></div>
                     </div>
                 </a>
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              <i class="fa-solid fa-bell alert-icon"></i>
+                <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                <i className="fa-solid fa-bell alert-icon"></i>
                 <div id="accountBox">
                     <a href="/singup" className="aOfheader">
                         <div className="accountBox_sl accountBox_sl--singup">Đăng ký / Đăng nhập</div>
@@ -52,59 +52,56 @@ function Header() {
                     </div>
                 </div>
                 <div>
-                <FontAwesomeIcon icon={faCircleUp} className="to-top" id="to-top" />
-            </div>
-            <div className="lopphu" id="lopphu"></div>
+                    <FontAwesomeIcon icon={faCircleUp} className="to-top" id="to-top" />
+                </div>
+                <div className="lopphu" id="lopphu"></div>
 
                 <div className="menu_choice" id="menu_choice">
-                    <a href='/profile'>
+                    <a href="/profile">
                         <div className="menu_choice_account">
                             <div className="menu_choice_account--pic"></div>
                             <div className="menu_choice_account--name">Nguyễn Thành Long</div>
                             <div className="menu_choice_account--note">
-                                Admin <i class="fa-solid fa-circle-check" style={{ color: '#4884ea' }}></i>{' '}
+                                Admin <i className="fa-solid fa-circle-check" style={{ color: '#4884ea' }}></i>{' '}
                             </div>
                         </div>
                     </a>
                     <div className="menu_choice_cointainer">
-                        <a href='/'>
+                        <a href="/">
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--home">
-                                <i class="fa-solid fa-house left"></i> Trang chủ
+                                <i className="fa-solid fa-house left"></i> Trang chủ
                             </div>
                         </a>
-                        <a href='/donhang'>
+                        <a href="/donhang">
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--product">
-                                <i class="fa-brands fa-product-hunt left"></i>Đơn hàng
+                                <i className="fa-brands fa-product-hunt left"></i>Đơn hàng
                             </div>
                         </a>
-                        <a href='/profile'>
+                        <a href="/profile">
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--profile">
-                                <i class="fa-solid fa-user left"></i>Profile
+                                <i className="fa-solid fa-user left"></i>Profile
                             </div>
                         </a>
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--like">
-                            <i class="fa-solid fa-star left"></i>Yêu thích
+                            <i className="fa-solid fa-star left"></i>Yêu thích
                         </div>
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--logout">
-                            <i class="fa-solid fa-clock-rotate-left left"></i>Đăng xuất
+                            <i className="fa-solid fa-clock-rotate-left left"></i>Đăng xuất
                         </div>
                         <div className="menu_choice_cointainer_contact">
                             <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--title">
                                 Liên hệ với chúng tôi
                             </div>
                             <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--face">
-                                <i class="fa-brands fa-facebook"></i> Facebook
+                                <i className="fa-brands fa-facebook"></i> Facebook
                             </div>
                             <div className="menu_choice_cointainer_contact_select menu_choice_cointainer_contact_select--x">
-                                <i class="fa-brands fa-twitter"> </i> Twitter
+                                <i className="fa-brands fa-twitter"> </i> Twitter
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
-            
         </div>
     );
 }

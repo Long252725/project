@@ -27,19 +27,12 @@ function Body() {
         }
         handleComment();
         function sendComment(data) {
-            let conetnt = {
-                method: "POST",
-                body: JSON.stringify(data)
-            }
-            fetch('https://test-api-n3fv.onrender.com/comments', conetnt)
+            
+            axios.get('https://test-api-n3fv.onrender.com/comments')
                 
-                .then((res) => {
-                    res.json()
-                    console.log(commentss.data);
-                   
-                })
+                
                 .then(comment => {
-                    console.log(comment)
+                    console.log(comment.data)
                 })
                 .catch(rejected => {
                     console.log(rejected);
@@ -280,13 +273,13 @@ function Body() {
                                 </div>
                                 <div className="product_box_tt">
                                     <div className="product_box_tt_select product_like" id="product_like">
-                                        <i class="fa-regular fa-thumbs-up left"></i>Like
+                                        <i className="fa-regular fa-thumbs-up left"></i>Like
                                     </div>
                                     <div className="product_box_tt_select product_comment" id="product_comment">
-                                        <i class="fa-regular fa-comments left "></i>Comment
+                                        <i className="fa-regular fa-comments left "></i>Comment
                                     </div>
                                     <div className="product_box_tt_select product_share" id="product_share">
-                                        <i class="fa-solid fa-arrow-up-from-bracket left"></i>Share
+                                        <i className="fa-solid fa-arrow-up-from-bracket left"></i>Share
                                     </div>
                                 </div>
                             </div>
@@ -359,7 +352,7 @@ function Body() {
                 <div id="upload_box_done">
                     <div className="upload_box_done">
                         <div className="upload_box_done_title">
-                            <i class="fa-regular fa-circle-check left"></i>Đăng bài thành công !
+                            <i className="fa-regular fa-circle-check left"></i>Đăng bài thành công !
                         </div>
                     </div>
                 </div>
@@ -369,7 +362,7 @@ function Body() {
             </div>
             <div className="boxcomment" id="boxcomment">
                 <div className="boxcomment_top">
-                    <i class="fa-solid fa-comment-dots left"></i>Comments
+                    <i className="fa-solid fa-comment-dots left"></i>Comments
                 </div>
                 <div className="boxcomment_comments">
                     {/* {listComments.current.map((comment) => {
@@ -392,7 +385,7 @@ function Body() {
                     <div className="boxcomment_taskbar_pic"></div>
                     <div className="boxcomment_taskbar_input">
                         <input className="boxcomment_taskbar_input--input" id="boxcomment_taskbar_input--input"></input>
-                        <i class="fa-solid fa-paper-plane iconSend" id="iconSend"></i>
+                        <i className="fa-solid fa-paper-plane iconSend" id="iconSend"></i>
                     </div>
                 </div>
             </div>
