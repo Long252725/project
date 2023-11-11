@@ -29,7 +29,9 @@ function Profile() {
             };
         }
         handleFixed();
+        
     }, []);
+    
     return (
         <div className="profile">
             <div className="profile_cointainer">
@@ -59,8 +61,9 @@ function Profile() {
                         </div>
                     </div>
                     <div className="profile_cointainer_box_posts" id="profile_cointainer_box_posts">
-                        <a href="/">
+                        
                             <div className="profile_cointainer_box_posts_select">
+                            <a href="/">
                                 <div className="profile_cointainer_box_posts_select--name">
                                     Laptop Gamming Lenovo Legion 5 Pro{' '}
                                 </div>
@@ -77,48 +80,22 @@ function Profile() {
                                         Máy chính chủ dùng cẩn thận nên còn như mới
                                     </div>
                                 </div>
+                                </a>
+                                <div className="product_box_tt profile-only">
+                                    <div className="product_box_tt_select product_like" id="product_like">
+                                        <i className="fa-regular fa-thumbs-up left"></i>Like
+                                    </div>
+                                    <div className="product_box_tt_select product_comment" id="product_comment">
+                                        <i className="fa-regular fa-comments left "></i>Comment
+                                    </div>
+                                    <div className="product_box_tt_select product_share" id="product_share">
+                                        <i className="fa-solid fa-arrow-up-from-bracket left"></i>Share
+                                    </div>
+                                </div>
+                                
                             </div>
-                        </a>
-                        <a href="/">
-                            <div className="profile_cointainer_box_posts_select">
-                                <div className="profile_cointainer_box_posts_select--name">
-                                    Laptop Gamming Lenovo Legion 5 Pro{' '}
-                                </div>
-                                <div className="profile_cointainer_box_posts_select--pic"></div>
-                                <div className="profile_cointainer_box_posts_select--price">
-                                    Giá:{' '}
-                                    <div className="profile_cointainer_box_posts_select--price--price">100.000đ</div>
-                                </div>
-                                <div className="profile_cointainer_box_posts_select--boxdetails">
-                                    <div className="profile_cointainer_box_posts_select--detailstitle">
-                                        Chi tiết sản phẩm:{' '}
-                                    </div>
-                                    <div className="profile_cointainer_box_posts_select--detailscontent">
-                                        Máy chính chủ dùng cẩn thận nên còn như mới
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div className="profile_cointainer_box_posts_select">
-                                <div className="profile_cointainer_box_posts_select--name">
-                                    Laptop Gamming Lenovo Legion 5 Pro{' '}
-                                </div>
-                                <div className="profile_cointainer_box_posts_select--pic"></div>
-                                <div className="profile_cointainer_box_posts_select--price">
-                                    Giá:{' '}
-                                    <div className="profile_cointainer_box_posts_select--price--price">100.000đ</div>
-                                </div>
-                                <div className="profile_cointainer_box_posts_select--boxdetails">
-                                    <div className="profile_cointainer_box_posts_select--detailstitle">
-                                        Chi tiết sản phẩm:{' '}
-                                    </div>
-                                    <div className="profile_cointainer_box_posts_select--detailscontent">
-                                        Máy chính chủ dùng cẩn thận nên còn như mới
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
+                        
+                        
                     </div>
                 </div>
             </div>

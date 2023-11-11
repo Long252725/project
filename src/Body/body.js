@@ -8,7 +8,7 @@ import ReactPlayer from 'react-player';
 
 function Body() {
     const [posts, setposts] = useState([]);
-    const [comment, setComment] = useState([]);
+    const [comments, setComments] = useState([]);
     let startListObj = useRef([]);
     let listComments = useRef([]);
     useEffect(() => {
@@ -17,6 +17,7 @@ function Body() {
             let btnSend = document.getElementById('iconSend');
             btnSend.onclick = () => {
                 let formComments = {
+                    
                     nd: inputComment.value,
                 };
                 console.log(formComments);
@@ -25,29 +26,28 @@ function Body() {
         }
         handleComment();
         function sendComment(data) {
-            axios
-                .post('https://test-api-n3fv.onrender.com/comments', {
-                    nd: data,
-                })
-
+            let content = {
+                method: 'POST', // *GET, POST, PUT, DELETE, etc.
+                cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: 'same-origin', // include, *same-origin, omit
+                headers: {
+                    'Content-Type': 'application/json',
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                redirect: 'follow', // manual, *follow, error
+                body: JSON.stringify(data), // body data type must match "Content-Type" header
+            };
+            fetch('https://api2-otinstore.onrender.com/comments', content)
+                .then((res) => res.json())
                 .then((comment) => {
-                    console.log(comment.data);
-                    setComment(comment.data);
+                    setComments(comment);
+                    listComments.current.push(comment);
                 })
-                .catch((rejected) => {
-                    console.log(rejected);
+                .catch((loi) => {
+                    console.log(loi);
                 });
-            // axios.get('https://test-api-n3fv.onrender.com/comments')
-
-            // .then(comment => {
-            //     console.log(comment.data)
-            //     setComment(comment.data)
-            // })
-            // .catch(rejected => {
-            //     console.log(rejected);
-            // });
         }
-    }, []);
+    }, [comments]);
     useEffect(() => {
         function handleStick() {
             window.onscroll = function () {
@@ -124,16 +124,15 @@ function Body() {
     }, []);
     useEffect(() => {
         function handlePost() {
-            axios.get('https://test-api-n3fv.onrender.com/posts')
-            .then((posts) => {
-                let postss = posts.data;
-                console.log(postss)
-                setposts(postss);
-            })
-            .catch((rejected) => {
-                console.log(rejected);
-            });
-            
+            axios
+                .get('https://api2-otinstore.onrender.com/posts')
+                .then((posts) => {
+                    let postss = posts.data;
+                    setposts(postss);
+                })
+                .catch((rejected) => {
+                    console.log(rejected);
+                });
         }
         handlePost();
     }, []);
@@ -169,6 +168,29 @@ function Body() {
                     boxcomment.style.display = 'block';
                     lopPhuBodyy.style.display = 'block';
                     header.style.zIndex = '9';
+                    function getComment() {
+                        fetch('https://api2-otinstore.onrender.com/comments')
+                            .then((res) => res.json())
+                            .then((comments) => {
+                                console.log(comments);
+                                let html = ``;
+                                comments.map((comment, index) => {
+                                    return (html += `<div key="${index}" class="boxcomment_comments_select">
+                                <div class="boxcomment_comments_select--pic"></div>
+                                <div class="boxcomment_comments_select--box">
+                                    <div class="boxcomment_comments_select--name">
+                                        Nguyễn Thành Long
+                                        <i class="fa-solid fa-circle-check right " style="color: #4884ea;"></i>
+                                    </div>
+
+                                    <div class="boxcomment_comments_select--nd">${comment.nd}</div>
+                                </div>
+                            </div>`);
+                                });
+                                document.getElementById('boxcomment_comments').innerHTML = html;
+                            });
+                    }
+                    getComment();
                 };
             }
             lopPhuBodyy.onclick = () => {
@@ -359,15 +381,15 @@ function Body() {
                 <div className="boxcomment_top">
                     <i className="fa-solid fa-comment-dots left"></i>Comments
                 </div>
-                <div className="boxcomment_comments">
-                    {comment.map((comment) => {
+                <div className="boxcomment_comments" id="boxcomment_comments">
+                    {listComments.current.map((comment, index) => {
                         return (
-                            <div className="boxcomment_comments_select">
+                            <div key={index} className="boxcomment_comments_select">
                                 <div className="boxcomment_comments_select--pic"></div>
                                 <div className="boxcomment_comments_select--box">
                                     <div className="boxcomment_comments_select--name">
                                         Nguyễn Thành Long{' '}
-                                        <i class="fa-solid fa-circle-check right " style={{ color: '#4884ea' }}></i>
+                                        <i className="fa-solid fa-circle-check right " style={{ color: '#4884ea' }}></i>
                                     </div>
 
                                     <div className="boxcomment_comments_select--nd">{comment.nd}</div>
