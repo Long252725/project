@@ -720,3 +720,10 @@
     max-width: 450px;
     
 }
+.delete_comment {
+    /* background-color: red; */
+    position: absolute;
+    right: 10px;
+    padding: 0 10px;
+    top: 20px;
+}

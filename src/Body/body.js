@@ -41,6 +41,7 @@ function Body() {
                 .then((res) => res.json())
                 .then((comment) => {
                     setComments(comment);
+                    
                     listComments.current.push(comment);
                 })
                 .catch((loi) => {
@@ -157,6 +158,10 @@ function Body() {
             }
         }
         handleWatchlist();
+        function deleteComment() {
+            console.log(document.querySelectorAll('.delete_comment'))
+        }
+        
         function handleComment() {
             let btnComments = document.querySelectorAll('#product_comment');
             let boxcomment = document.getElementById('boxcomment');
@@ -184,13 +189,16 @@ function Body() {
                                     </div>
 
                                     <div class="boxcomment_comments_select--nd">${comment.nd}</div>
-                                </div>
+                                    </div>
+                                    <button class="delete_comment" id="delete_comment">Xóa</button>
                             </div>`);
                                 });
                                 document.getElementById('boxcomment_comments').innerHTML = html;
                             });
-                    }
+                            
+                        }
                     getComment();
+                    deleteComment()
                 };
             }
             lopPhuBodyy.onclick = () => {

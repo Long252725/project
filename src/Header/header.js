@@ -27,6 +27,22 @@ function Header() {
             };
         }
         handletoTop();
+        function alert() {
+            let btnAlert = document.getElementById('alert-icon')
+            let boxAlert = document.getElementById('boxAlert_container')
+            let isClick = false
+            btnAlert.onclick = ()=> {
+                if(!isClick) {
+                    boxAlert.style.display = "block"
+                    isClick = true
+                } else 
+                {
+                    boxAlert.style.display = "none"
+                    isClick= false
+                }
+            }
+        }
+        alert()
     }, []);
     return (
         <div>
@@ -40,7 +56,36 @@ function Header() {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
                 <i className="fa-solid fa-magnifying-glass search-icon"></i>
-                <i className="fa-solid fa-bell alert-icon"></i>
+                <div className="boxAlert">
+                    <i className="fa-solid fa-bell alert-icon" id="alert-icon"></i>
+                    <div className="boxAlert_container" id="boxAlert_container">
+                        <div className="boxAlert_header">Thông báo</div>
+                        <div className="boxAlert_body">
+                            <div className="boxAlert_select">
+                                <div className="boxAlert_select--avatar"> </div>
+                                <div className="boxAlert_select--title"> Get 10 free Adobe Stock photos. Start downloading amazing royalty-free stock photos today.</div>
+                                <div className="boxAlert_select--pic"> </div>
+                                <div className="boxAlert_select--time"> 12/11/2023 </div>
+                            </div><div className="boxAlert_select">
+                                <div className="boxAlert_select--avatar"> </div>
+                                <div className="boxAlert_select--title"> Hello các bạn, mình là Concac code dạo</div>
+                                <div className="boxAlert_select--pic"> </div>
+                                <div className="boxAlert_select--time"> 12/11/2023 </div>
+                            </div><div className="boxAlert_select">
+                                <div className="boxAlert_select--avatar"> </div>
+                                <div className="boxAlert_select--title"> Bóng có chữ ký Quang Hải</div>
+                                <div className="boxAlert_select--pic"> </div>
+                                <div className="boxAlert_select--time"> 6 giờ trước </div>
+                            </div><div className="boxAlert_select">
+                                <div className="boxAlert_select--avatar"> </div>
+                                <div className="boxAlert_select--title"> Bạn có thông báo mới</div>
+                                <div className="boxAlert_select--pic"> </div>
+                                <div className="boxAlert_select--time"> ngay bây giờ</div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
                 <div id="accountBox">
                     <a href="/singup" className="aOfheader">
                         <div className="accountBox_sl accountBox_sl--singup">Đăng ký / Đăng nhập</div>
