@@ -258,7 +258,7 @@ function Body() {
                     {posts.map((post, index) => {
                         return (
                             <div className="product" id="product" key={index}>
-                                <a href="/profile">
+                                <a href="/chitiet">
                                     <div className="product_name" id="product_name">
                                         {post.name}
                                     </div>
@@ -282,10 +282,12 @@ function Body() {
                                         {post.price}
                                     </div>
                                 </div>
-                                <button className=" btn_buy" id="btn_buy">
-                                    {' '}
-                                    Mua ngay
-                                </button>
+                                <a href='chitiet'>
+                                    <button className=" btn_buy" id="btn_buy">
+                                        {' '}
+                                        Mua ngay
+                                    </button>
+                                </a>
                                 <button className=" btn_trade" id="btn_trade">
                                     {' '}
                                     Trao đổi miễn phí

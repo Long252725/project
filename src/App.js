@@ -9,6 +9,8 @@ import Buy from './Slide/Buy/buy';
 import Profile from './Slide/Profile/profile';
 import Singup2 from './Slide/singup2';
 import Login2 from './Slide/singup2';
+import Details from './Slide/Details/details';
+import Intro from './Slide/Introduce/introduce';
 // import {Login} from './Slide/Log in';
 // import { useEffect } from 'react';
 
@@ -27,8 +29,10 @@ function App() {
                     }
                 ></Route>
                 <Route path="/singup" element={<Singup />}></Route>
+                <Route path="/chitiet" element={<Details />}></Route>
                 <Route path="/singup2" element={<Singup2 />}></Route>
                 <Route path="/login2" element={<Login2 />}></Route>
+                <Route path="/gioithieu" element={<Intro />}></Route>
                 <Route path="/profile" element={<Fragment>
                     <Header/>
                     <Profile />

@@ -308,6 +308,8 @@ a {
     display: flex;
     align-items: center;
     color: white;
+    box-shadow: 0 0 4px gray;
+
 
     
 }
@@ -319,9 +321,9 @@ a {
     height: 100%;
     border-radius: 10px;
     display: none;
-    box-shadow: 0 0 4px #eaf4ff;
 }
 .boxAlert_body {
+    box-shadow: 0 0 4px gray;
     background-color: #eaf4ff;
     position: relative;
     width: 100%;
