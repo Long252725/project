@@ -47,7 +47,7 @@
         return (
             <div>
                 <div className="header" id="header">
-                    <a href="/gioithieu">
+                    <a href="https://otinstore.my.canva.site/?fbclid=IwAR3NdXxFLwMdLMxpG2am7cptVdZNJMdGmqWldWsPf1M1NSlTL4kdZqV8gsY">
                         <div className="box_logo">
                             <div className="header_pic"></div>
                             <div className="header_pic_name"></div>
