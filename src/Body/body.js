@@ -190,7 +190,7 @@ function Body() {
 
                                     <div class="boxcomment_comments_select--nd">${comment.nd}</div>
                                     </div>
-                                    <button class="delete_comment" id="delete_comment">Xóa</button>
+                                    <button class="delete_comment" id="delete_comment">Delete</button>
                             </div>`);
                                 });
                                 document.getElementById('boxcomment_comments').innerHTML = html;

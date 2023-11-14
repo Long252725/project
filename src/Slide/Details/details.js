@@ -128,6 +128,16 @@ function Details() {
                         </div>
                     </div>
                 </div>
+                <div className="chitiet_comments">
+                    <div className='chitiet_comments_title'>Comments</div>
+                    <div className='chitiet_comments_comments'>
+                        <div className='chitiet_comments_comments_select'></div>
+                        <div className='chitiet_comments_comments_select'></div>
+                        <div className='chitiet_comments_comments_select'></div>
+                        <div className='chitiet_comments_comments_select'></div>
+                        <div className='chitiet_comments_comments_select'></div>
+                    </div>
+                </div>
             </div>
             <Bottom />
         </div>

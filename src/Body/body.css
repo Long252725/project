@@ -672,7 +672,6 @@
     color: #050505;
     font-size: 15px;
     line-height: 19.9995px;
-
     padding: 0 10px;
     max-width: 450px;
 }
@@ -681,4 +680,9 @@
     right: 10px;
     padding: 0 10px;
     top: 20px;
+    border: none;
+    top: 25px;
+    font-weight: 600;
+    color: #3c4c6c;
+    cursor: pointer;
 }
