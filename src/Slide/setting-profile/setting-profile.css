@@ -3,14 +3,14 @@
     /* background-color: red; */
     z-index: 14;
     left: 380px;
-    top: 150px;
+    top: 130px;
     height: 500px;
     width: 840px;
 }
 .setting-profile_top {
     position: relative;
     width: 100%;
-    height: 60px;
+    height: 80px;
     /* background-color: blue; */
     border-bottom: 1px solid #517da9;
 }
@@ -20,7 +20,7 @@
     font-weight: 600;
     color: #263b50;
     /* background-color: yellow; */
-    padding: 0px 0 0 20px;
+    padding: 20px 0 0 20px;
 }
 .setting-profile_top_second {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
