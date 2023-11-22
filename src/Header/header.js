@@ -30,18 +30,17 @@ function Header() {
         function alert() {
             let btnAlert = document.getElementById('alert-icon');
             let boxAlert = document.getElementById('boxAlert_container');
-            let boxAlertAll = document.getElementById('boxAlert')
+            let boxAlertAll = document.getElementById('boxAlert');
             let isClick = false;
             btnAlert.onclick = () => {
                 if (!isClick) {
-                    boxAlertAll.style.height = '300px'
+                    boxAlertAll.style.height = '300px';
                     boxAlert.style.display = 'block';
                     isClick = true;
                 } else {
                     boxAlert.style.display = 'none';
                     isClick = false;
-                    boxAlertAll.style.height = '10px'
-
+                    boxAlertAll.style.height = '10px';
                 }
             };
         }
@@ -62,8 +61,10 @@ function Header() {
                 <FontAwesomeIcon icon={faMagnifyingGlass} className="iconSearch" />
                 <input id="search" placeholder="Tìm kiếm"></input>
                 <i className="fa-solid fa-magnifying-glass search-icon"></i>
+                
                 <i class="fa-solid fa-comment mess-icon"></i>
-                <div className="boxAlert" id='boxAlert'> 
+
+                <div className="boxAlert" id="boxAlert">
                     <i className="fa-solid fa-bell alert-icon" id="alert-icon"></i>
                     <div className="boxAlert_container" id="boxAlert_container">
                         <div className="boxAlert_header">Thông báo</div>
@@ -117,9 +118,9 @@ function Header() {
                     <a href="/profile">
                         <div className="menu_choice_account">
                             <div className="menu_choice_account--pic"></div>
-                            <div className="menu_choice_account--name">Nguyễn Thành Long</div>
-                            <div className="menu_choice_account--note">
-                                Admin <i className="fa-solid fa-circle-check" style={{ color: '#4884ea' }}></i>{' '}
+                            <div className="menu_choice_account--name">Nguyễn Thành Long <i className="fa-solid fa-circle-check right" style={{ color: '#4884ea' }}></i></div>
+                            <div className="menu_choice_account--money">
+                                Số dư: 100.000đ
                             </div>
                         </div>
                     </a>
@@ -127,6 +128,11 @@ function Header() {
                         <a href="/">
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--home">
                                 <i className="fa-solid fa-house left"></i> Trang chủ
+                            </div>
+                        </a>
+                        <a href="/wallet">
+                            <div className="menu_choice_cointainer_select menu_choice_cointainer--wallet">
+                            <i class="fa-solid fa-wallet left"></i> Ví tiền
                             </div>
                         </a>
                         <a href="/donhang">
@@ -142,9 +148,9 @@ function Header() {
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--like">
                             <i className="fa-solid fa-star left"></i>Yêu thích
                         </div>
-                        <a href='/setting-profile'>
+                        <a href="/setting-profile">
                             <div className="menu_choice_cointainer_select menu_choice_cointainer--setting">
-                            <i class="fa-solid fa-gear left"></i>Thiết lập tài khoản
+                                <i class="fa-solid fa-gear left"></i>Thiết lập tài khoản
                             </div>
                         </a>
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--logout">

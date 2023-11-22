@@ -191,7 +191,7 @@ function Singup() {
         <div>
             <div className="singup">
                 <div className="boxSingup">
-                    <h1>Sign up - Log in</h1>
+                    <div className='boxSingup_title'>Sign up - Log in</div>
                     <div className="infoSingup">
                         <input
                             className="inputSingup infoSingup--username"

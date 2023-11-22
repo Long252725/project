@@ -13,6 +13,7 @@ import Setting from './Slide/setting/setting';
 import Settingprofile from './Slide/setting-profile/setting-profile';
 import Settingpayment from './Slide/setting-payment/setting-payment';
 import SettingAddress from './Slide/setting-address/setting-address';
+import Bill from './Slide/Bill/bill';
 // import {Login} from './Slide/Log in';
 // import { useEffect } from 'react';
 
@@ -31,6 +32,7 @@ function App() {
                     }
                 ></Route>
                 <Route path="/singup" element={<Singup />}></Route>
+                <Route path="/bill" element={<Bill />}></Route>
                 <Route path="/chitiet" element={<Details />}></Route>
                 <Route path="/gioithieu" element={<Intro />}></Route>
                 <Route path="/setting" element={<Setting />}></Route>

@@ -97,9 +97,11 @@ function Details() {
                             Q.Hải cho và kí quả bóng mà mình thì lại không thần tượng Q.Hải lắm nên mình muốn có đồ nghề
                             để sau này làm game thủ Mình có video quay lại nhé:3
                         </div>
-                        <div className="chitiet_cointainer_box_details--btnBuy details--btn">
-                            <i class="fa-solid fa-cart-shopping left"></i>Mua ngay
-                        </div>
+                        <a href='/bill'>
+                            <div className="chitiet_cointainer_box_details--btnBuy details--btn">
+                                <i class="fa-solid fa-cart-shopping left"></i>Mua ngay
+                            </div>
+                        </a>
                         <div className="chitiet_cointainer_box_details--btnOffer details--btn">
                             <i class="fa-solid fa-retweet left"></i>Trao đổi miễn phí
                         </div>
