@@ -276,7 +276,7 @@ a {
 .boxAlert {
     position: absolute;
     width: 310px;
-    height: 300px;
+    height: 10px;
     /* background-color: red; */
     font-family: inherit;
     left: 940px;

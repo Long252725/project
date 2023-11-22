@@ -30,14 +30,18 @@ function Header() {
         function alert() {
             let btnAlert = document.getElementById('alert-icon');
             let boxAlert = document.getElementById('boxAlert_container');
+            let boxAlertAll = document.getElementById('boxAlert')
             let isClick = false;
             btnAlert.onclick = () => {
                 if (!isClick) {
+                    boxAlertAll.style.height = '300px'
                     boxAlert.style.display = 'block';
                     isClick = true;
                 } else {
                     boxAlert.style.display = 'none';
                     isClick = false;
+                    boxAlertAll.style.height = '10px'
+
                 }
             };
         }
@@ -59,7 +63,7 @@ function Header() {
                 <input id="search" placeholder="Tìm kiếm"></input>
                 <i className="fa-solid fa-magnifying-glass search-icon"></i>
                 <i class="fa-solid fa-comment mess-icon"></i>
-                <div className="boxAlert">
+                <div className="boxAlert" id='boxAlert'> 
                     <i className="fa-solid fa-bell alert-icon" id="alert-icon"></i>
                     <div className="boxAlert_container" id="boxAlert_container">
                         <div className="boxAlert_header">Thông báo</div>
@@ -138,9 +142,11 @@ function Header() {
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--like">
                             <i className="fa-solid fa-star left"></i>Yêu thích
                         </div>
-                        <div className="menu_choice_cointainer_select menu_choice_cointainer--setting">
-                        <i class="fa-solid fa-gear left"></i>Thiết lập tài khoản
-                        </div>
+                        <a href='/setting-profile'>
+                            <div className="menu_choice_cointainer_select menu_choice_cointainer--setting">
+                            <i class="fa-solid fa-gear left"></i>Thiết lập tài khoản
+                            </div>
+                        </a>
                         <div className="menu_choice_cointainer_select menu_choice_cointainer--logout">
                             <i className="fa-solid fa-clock-rotate-left left"></i>Đăng xuất
                         </div>
