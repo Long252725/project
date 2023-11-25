@@ -11,7 +11,7 @@ html {
     font-family: Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'segoe ui', Roboto,
         'helvetica neue', Arial, 'noto sans', sans-serif, 'apple color emoji', 'segoe ui emoji', 'segoe ui symbol',
         'noto color emoji';
-        scroll-behavior: smooth
+        scroll-behavior: smooth;
 }
 a {
     text-decoration: none;

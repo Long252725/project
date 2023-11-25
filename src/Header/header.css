@@ -175,9 +175,10 @@ a {
 .menu_choice_account--money {
     font-weight: 700;
     position: absolute;
+    font-family: inherit;
     top: 48px;
     left: 94px;
-    font-size: 12px;
+    font-size: 13px;
     color: #4884ea;
     cursor: pointer;
 }

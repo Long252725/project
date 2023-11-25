@@ -1,15 +1,46 @@
 .bill_cointainer {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .bill_cointainer_box {
     position: relative;
     top: 130px;
-    min-height: 500px;
+    min-height: 5px;
     padding-bottom: 10px;
     width: 1100px;
     padding-bottom: 100px;
     background-color: white;
-    /* z-index: 10; */
-    border-radius: 20px;
+    margin-bottom: 10px;
+    border-radius: 4px ;
+}
+.bill_cointainer_box_address {
+    height: 20px;
+    border-top: 3px solid #517da9;
+}
+.bill_cointainer_box_address_title {
+    font-size: 17px;
+    font-weight: 700;
+    /* background-color: red; */
+    padding: 20px 0 20px 30px;
+    font-family: inherit;
+    color: #f24320;
+}
+.bill_cointainer_box_address_name,
+.bill_cointainer_box_address_sdt,
+.bill_cointainer_box_address_addr {
+    position: absolute;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+.bill_cointainer_box_address_name {
+    left: 35px;
+   
+}
+.bill_cointainer_box_address_sdt {
+}
+.bill_cointainer_box_address_addr {
+    left: 350px;
+    font-weight: 500;
 }
