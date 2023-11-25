@@ -101,9 +101,9 @@ function Header() {
                     </div>
                 </div>
                 <div id="accountBox">
-                    <a href="/singup" className="aOfheader">
+                    {/* <a href="/singup" className="aOfheader">
                         <div className="accountBox_sl accountBox_sl--singup">Đăng ký / Đăng nhập</div>
-                    </a>
+                    </a> */}
 
                     <div className="menu accountBox_sl" id="menu">
                         <i class="fa-solid fa-bars"></i>
