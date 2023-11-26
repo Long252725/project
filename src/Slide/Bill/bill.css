@@ -23,7 +23,7 @@
     background-color: white;
     margin-bottom: 10px;
     border-radius: 4px;
-    box-shadow: 0 1px 2px 1px #bbbbbb;
+    /* box-shadow: 0 1px 2px 1px #bbbbbb; */
 }
 .bill_cointainer_box_address {
     height: 20px;
@@ -241,7 +241,7 @@
 }
 .bill_cointainer_box_payment_top {
     height: 90px;
-    border-bottom: 1px solid #bbbbbb;
+    border-bottom: 1px solid #e6e6e6;
 }
 .bill_cointainer_box_payment_top_title {
     font-size: 18px;
@@ -279,7 +279,7 @@
 .bill_cointainer_box_payment_total {
     height: 150px;
     /* background-color: red; */
-    border-bottom: 1px solid #bbbbbb;
+    border-bottom: 1px solid #eaeaea;
 }
 .bill_cointainer_box_payment_total_select {
     display: flex;
@@ -307,6 +307,7 @@
 }
 .bill_cointainer_box_payment_dathang {
     height: 70px;
+    padding-bottom: 0;
 
 }
 .bill_cointainer_box_payment_dathang--btn {
@@ -324,4 +325,7 @@
     margin-top: 20px;
     font-size: 14px;
     color: #000000b7;
+}
+.bill_cointainer_box_voucher {
+    margin-top: 100px;
 }
